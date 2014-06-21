@@ -230,7 +230,7 @@ namespace YF17A
         private void InitStatusMap()
         {
             mStatusMap.Add(".StoreUnit_e_stop_button", new ErrorInfo() { level = 101, description =  "下降口急停按钮按下", address = "I4.5",trigger=false,  code = "S205", solution = "请松开急停按钮并按压复位按钮" });
-            mStatusMap.Add(".Elevater_e_stop", new ErrorInfo() { level = 102, description =  "控制柜急停按钮按下", address = "I2.7", trigger=false , code = "S105", solution = "请松开急停按钮并按压复位按钮" });
+            mStatusMap.Add(".DropTransLimitLevel", new ErrorInfo() { level = 102, description = "下降口输送极限料位", address = "I2.7", trigger = false, code = "S105", solution = "请松开急停按钮并按压复位按钮" });
             mStatusMap.Add(".Emergency_stop", new ErrorInfo() { level = 103, description =  "紧急停止回路断开", address = "I0.0", trigger=false, code = "K01", solution = "检查紧急停止按钮或请维修人员检修" });
             mStatusMap.Add(".MakerExit_power", new ErrorInfo() { level = 104, description =  "烟机出口伺服主电源断开", address = "I0.1", trigger=false, code = "Q06", solution = "请维修人员检修。" });
             mStatusMap.Add(".Sample_power", new ErrorInfo() { level = 105, description =  "取样伺服主电源断开", address = "I0.2", trigger=false, code = "Q07", solution = "请维修人员检修。" });

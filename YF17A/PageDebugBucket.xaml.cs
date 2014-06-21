@@ -134,17 +134,26 @@ namespace YF17A
            //<!--驱动器主电源	I0.3   指示灯	I0.4  指示灯-->
             mStatusMap.Add(".Slope_power", this.iv_Slope_power); //<!-- Slope_power	Bool	斜向伺服主电源	Q10	只读	指示灯/报警条显示	I0.3-->
             mStatusMap.Add(".Store_power", this.iv_Store_power); //<!--Store_power	Bool	存储伺服主电源	Q11	只读	指示灯/报警条显示	I0.4-->               
+            mStatusMap.Add(".DropTrans_power", this.iv_DropTrans_power); //<!--Store_power	Bool	存储伺服主电源	Q11	只读	指示灯/报警条显示	I0.4-->               
+         
             //<!--驱动器准备好	I0.7  指示灯	I1.0  指示灯-->     
             mStatusMap.Add(".Slope_servo_fault", this.iv_Slope_servo_fault);//<!-- Slope_servo_fault	Bool	斜向伺服控制器故障	A18	只读	指示灯/报警条显示	I0.7-->
             mStatusMap.Add(".Store_servo_fault", this.iv_Store_servo_fault);//<!--Store_servo_fault	Bool	存储伺服控制器故障	A19	只读	指示灯/报警条显示	I1.0-->           
+            mStatusMap.Add(".DropTrans_servo_fault", this.iv_DropTrans_servo_fault); //<!--Store_power	Bool	存储伺服主电源	Q11	只读	指示灯/报警条显示	I0.4-->               
             //<!--初始化完成	M1702.7 指示灯	M1702.7 指示灯-->
             mStatusMap.Add(".Slope_servo_initialized", this.iv_Slope_servo_initialized);//<!--Slope_servo_initialized	Bool	斜向驱动器初始完成		只读	指示灯	M1702.7-->          
+            mStatusMap.Add(".DropTrans_servo_initialized", this.iv_DropTrans_servo_initialized);//<!--Slope_servo_initialized	Bool	斜向驱动器初始完成		只读	指示灯	M1702.7-->          
+          
             //<!--驱动器使能	M1702.5 指示灯	M1802.5 指示灯-->
             mStatusMap.Add(".Slope_servo_enable", this.iv_Slope_servo_enable);//<!--Slope_servo_enable	Bool	斜向驱动器使能		只读	指示灯	M1702.5-->
             mStatusMap.Add(".Store_servo_enable", this.iv_Store_servo_enable);//<!--Store_servo_enable	Bool	存储驱动器使能		只读	指示灯	M1802.5-->              
+            mStatusMap.Add(".DropTrans_servo_enable", this.iv_DropTrans_servo_enable);//<!--Store_servo_enable	Bool	存储驱动器使能		只读	指示灯	M1802.5-->              
+        
             //<!--伺服电机转速	MW1736  数值显示	MW1738  数值显示-->
             mStatusMap.Add(".Slope_speed_rpm", this.tb_Slope_speed_rpm);//<!--Slope_speed_rpm	Int	斜向电机转速		只读	数值显示	MW1736-->
             mStatusMap.Add(".Store_speed_rpm", this.tb_Store_speed_rpm);//<!--Store_speed_rpm	Int	存储电机转速		只读	数值显示	MW1738-->            
+            mStatusMap.Add(".DropTrans_speed_rpm", this.tb_DropTrans_speed_rpm);//<!--Store_speed_rpm	Int	存储电机转速		只读	数值显示	MW1738-->            
+
 
            // mStatusMap.Add(".Store_set_zero", this.iv_Store_set_zero); //<!-- 手动校零地址：M1000.0 Store_set_zero -->
         }

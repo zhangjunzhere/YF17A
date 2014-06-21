@@ -150,12 +150,15 @@ namespace YF17A
 
         private void InitStatusMap()
         {
-          
+            mStatusMap.Add(".test_run", this.btn_test_run); //test_run	Bool	机器试运转		读/写	按钮/指示灯	M1000.6
+            mStatusMap.Add(".test_maker_speed", this.btn_test_maker_speed); //test_maker_speed	Int	卷烟机试运转速度		读/写	数值显示	MW1950
+            mStatusMap.Add(".test_packer_speed", this.btn_test_packer_speed); //test_packer_speed	Int	包装机试运转速度		读/写	数值显示	MW1952
 
-            //mStatusMap.Add(".test_run", this.iv_test_run); //test_run	Bool	机器试运转		读/写	按钮/指示灯	M1000.6
-            //mStatusMap.Add(".test_maker_speed", this.btn_test_maker_speed); //test_maker_speed	Int	卷烟机试运转速度		读/写	数值显示	MW1950
-           // mStatusMap.Add(".test_packer_speed", this.btn_test_packer_speed); //test_packer_speed	Int	包装机试运转速度		读/写	数值显示	MW1952
-            //mStatusMap.Add(".test_run_unprotected", this.iv_test_run_unprotected);  // test_run_unprotected	Bool	机器强制试运转		读/写	按钮/指示灯	M1000.7
+            mStatusMap.Add(".Maker_MaxSpeedLimit", this.btn_Maker_MaxSpeedLimit);  //<!--卷烟机最大速度设定（DB8.DBW60）Maker_MaxSpeedLimit-->
+            mStatusMap.Add(".Packer_MaxSpeedLimit", this.btn_Packer_MaxSpeedLimit);  //<!--包装机最大速度设定（DB8.DBW62）Packer_MaxSpeedLimit-->
+
+            mStatusMap.Add(".cig_dim", this.btn_cig_dim);  //烟支直径（DB8.DBW46 cig_dim           
+            mStatusMap.Add(".test_run_unprotected", this.btn_test_run_unprotected);  // test_run_unprotected	Bool	机器强制试运转		读/写	按钮/指示灯	M1000.7
         }
 
         private void btn_test_run_Click(object sender, RoutedEventArgs e)

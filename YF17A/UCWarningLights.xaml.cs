@@ -125,7 +125,7 @@ namespace YF17A
 
             mStatusMap.Add(".Sample_cig_speed", this.tb_Sample_cig_speed);//取样电机烟支速度（MW1302）Sample_cig_speed		
             mStatusMap.Add(".Maker_cig_speed", this.tb_Maker_cig_speed);//卷烟机烟支速度（MW1300）Maker_cig_speed
-            mStatusMap.Add(".MakerExport_cig_speed", this.tb_MakerExport_cig_speed);//烟机出口电机速度：MW1404 MakerExport_cig_speed
+            mStatusMap.Add(".DropTrans_cig_speed", this.tb_DropTrans_cig_speed);//烟机出口电机速度：MW1404 MakerExport_cig_speed
 
             foreach (String item in mStatusMap.Keys)
             {              

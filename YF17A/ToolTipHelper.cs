@@ -261,13 +261,13 @@ namespace YF17A
 
             mStatusMap.Add(".Sample_entrance_sensor", new ElementInfo() { Light = mYellowLight, Flash = false }); // Sample_entrance_sensor	Bool	取样入口有烟传感器	B-PSW101	只读	指示灯	I2.3
             mStatusMap.Add(".Emergency_stop", new ElementInfo() { Light = mRedLight, Flash = false });  //Emergency_stop	Bool	紧急停止继电器	K01	只读	指示灯/报警条显示	I0.0
-            mStatusMap.Add(".Elevater_e_stop", new ElementInfo() {  Light = mRedLight, Flash = false }); //Elevater_e_stop	Bool	提升机紧急停止按钮	SB105	只读	指示灯/报警条显示	I1.7
+            mStatusMap.Add(".DropTransLimitLevel", new ElementInfo() { Light = mRedLight, Flash = false }); //Elevater_e_stop	Bool	提升机紧急停止按钮	SB105	只读	指示灯/报警条显示	I1.7
             mStatusMap.Add(".alarm_corner_entrance_jam", new ElementInfo() { Light = mRedLight, Flash = true });//alarm_corner_entrance_jam	Bool	弯道入口堵塞报警指示		只读	指示灯/报警条显示	M50.1
 
             mStatusMap.Add(".alarm_transfer_overload", new ElementInfo() { Light = mRedLight, Flash=true }); //alarm_transfer_overload	Bool	传送电机过载报警指示		只读	指示灯/报警条显示	M50.3
             mStatusMap.Add(".Transfer_cig_exist", new ElementInfo() { Light = mYellowLight, Flash = false }); //Transfer_cig_exist	Bool	高架烟支传感器	B-PSW201	只读	指示灯	I4.2
             mStatusMap.Add(".alarm_downport_entrance_jam", new ElementInfo() { Light = mRedLight, Flash = true }); //alarm_downport_entrance_jam	Bool	下降口入口堵塞报警指示		只读	指示灯/报警条显示	M50.2
-            mStatusMap.Add(".StoreUnit_e_stop_button", new ElementInfo() { Light = mRedLight, Flash = false });  //StoreUnit_e_stop_button	Bool	存储器紧急停止按钮	SB205	只读	指示灯/报警条显示	I3.5
+        //    mStatusMap.Add(".StoreUnit_e_stop_button", new ElementInfo() { Light = mRedLight, Flash = false });  //StoreUnit_e_stop_button	Bool	存储器紧急停止按钮	SB205	只读	指示灯/报警条显示	I3.5
 
             mStatusMap.Add(".Slope_empty", new ElementInfo() { Light = mYellowLight, Flash = false });//Slope_empty	Bool	斜向通道空	B-PRX202	只读	指示灯	I4.1
             mStatusMap.Add(".Store_entrance_cig_exist", new ElementInfo() { Light = mYellowLight, Flash = true }); //Store_entrance_cig_exist	Bool	存储器入口有烟传感器	B-PSW301	只读	指示灯	I5.3

@@ -2,9 +2,9 @@
 <!--This file is created by the TCatPlcCtrl automatically. Manually changes will be overwritten!-->
 <PlcProjectInfo xmlns:p="http://www.beckhoff.com/2002/01/TcPlcProjectDesc">
 	<ProjectInfo>
-		<Path>D:\YF17A\workspace\branches\YF17A-6Axis\YF17A\doc\TWincatPro\Test3.pro</Path>
+		<Path>D:\YF17A\workspace\branches\YF17A-7Axis\YF17A\doc\TWincatPro\Test4(7Axis).pro</Path>
 		<IsLibrary>false</IsLibrary>
-		<ChangeDate>2014-05-25T18:04:21</ChangeDate>
+		<ChangeDate>2014-05-19T21:17:12</ChangeDate>
 		<Library>
 			<Name>STANDARD.LIB</Name>
 			<Path>C:\TWINCAT\PLC\LIB\STANDARD.LIB</Path>
@@ -623,32 +623,6 @@
 	</DataTypes>
 	<Functions>
 		<Function>
-			<Name Decoration="1004D2D0" IsDefinedInLibrary="1" Library="">PRINTF</Name>
-			<FunInfo>
-				<CodeIndex>50</CodeIndex>
-				<ReturnValue>
-					<Name IsDefinedInLibrary="1" Library="">PRINTF</Name>
-					<Type Decoration="40000051">STRING(80)</Type>
-					<BitSize>648</BitSize>
-				</ReturnValue>
-				<FunParameter>
-					<Name FunParameter="Input" IsDefinedInLibrary="1" Library="">stFormat</Name>
-					<Type Decoration="40000051">STRING(80)</Type>
-					<BitSize>648</BitSize>
-				</FunParameter>
-				<FunParameter>
-					<Name FunParameter="Input" IsDefinedInLibrary="1" Library="">dwValue</Name>
-					<Type Pointer="1">BYTE</Type>
-					<BitSize>32</BitSize>
-				</FunParameter>
-				<FunParameter>
-					<Name FunParameter="Input" IsDefinedInLibrary="1" Library="">nType</Name>
-					<Type>INT</Type>
-					<BitSize>16</BitSize>
-				</FunParameter>
-			</FunInfo>
-		</Function>
-		<Function>
 			<Name Decoration="1003CF58" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">CONCAT</Name>
 			<FunInfo>
 				<CodeIndex>17</CodeIndex>
@@ -911,7 +885,7 @@
 			<Name Static="Input">.CigMakingSpeed</Name>
 			<Type>INT</Type>
 			<Comment>
-				<![CDATA[*PACKER ADDRESS DEFINE*]]>
+				<![CDATA[*Packer Address Define*]]>
 			</Comment>
 			<IGroup>61472</IGroup>
 			<IOffset>330</IOffset>
@@ -921,7 +895,7 @@
 			<Name Static="Input">.PackingSpeed</Name>
 			<Type>INT</Type>
 			<Comment>
-				<![CDATA[MANPOTENTIOMETERSPEED  ADDRESS]]>
+				<![CDATA[ManPotentiometerSpeed  Address]]>
 			</Comment>
 			<IGroup>61472</IGroup>
 			<IOffset>332</IOffset>
@@ -931,7 +905,7 @@
 			<Name Static="Input">.PotenSpeed</Name>
 			<Type>INT</Type>
 			<Comment>
-				<![CDATA[****LEVEL ADDRESS  DEFINE*******]]>
+				<![CDATA[****Level Address  Define*******]]>
 			</Comment>
 			<IGroup>61472</IGroup>
 			<IOffset>328</IOffset>
@@ -941,7 +915,7 @@
 			<Name Static="Input">.ElevatorLevel</Name>
 			<Type>INT</Type>
 			<Comment>
-				<![CDATA[****DROP ADDRESS  DEFINE*******]]>
+				<![CDATA[****Drop Address  Define*******]]>
 			</Comment>
 			<IGroup>61472</IGroup>
 			<IOffset>324</IOffset>
@@ -1018,6 +992,26 @@
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
+			<Name Static="MArea">.DropTrans_cig_speed</Name>
+			<Type>INT</Type>
+			<Comment>
+				<![CDATA[下降口输送烟支速度]]>
+			</Comment>
+			<IGroup>16416</IGroup>
+			<IOffset>2320</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="MArea">.DropTrans_speed_rpm</Name>
+			<Type>INT</Type>
+			<Comment>
+				<![CDATA[下降口输送电机转速]]>
+			</Comment>
+			<IGroup>16416</IGroup>
+			<IOffset>2340</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
 			<Name Static="MArea">.Lift_p_parameter</Name>
 			<Type>INT</Type>
 			<IGroup>16416</IGroup>
@@ -1034,96 +1028,6 @@
 		<Symbol>
 			<Name Static="MArea">.MakerExport_p_parameter</Name>
 			<Type>INT</Type>
-			<Comment>
-				<![CDATA[EMERGENCY_STOP AT %IX0.0 : BOOL;
-	MAKEREXIT_POWER AT %IX0.1 : BOOL;
-	SAMPLE_POWER AT %IX0.2 : BOOL;
-	CORNER_POWER AT %IX0.3 : BOOL;
-	LIFT_POWER AT %IX0.4 : BOOL;
-	TRANSFER_POWER AT %IX0.5 : BOOL;
-	SLOPE_POWER AT %IX0.6 : BOOL;
-	STORE_POWER AT %IX0.7 : BOOL;
-	SPARE10 AT %IX1.0 : BOOL;
-	SPARE11 AT %IX1.1 : BOOL;
-	MAKEREXIT_SERVO_FAULT AT %IX1.2 : BOOL;
-	SAMPLE_SERVO_FAULT AT %IX1.3 : BOOL;
-	CORNER_SERVO_FAULT AT %IX1.4 : BOOL;
-	LIFT_SERVO_FAULT AT %IX1.5 : BOOL;
-	TRANSFER_SERVO_FAULT AT %IX1.6 : BOOL;
-	SLOPE_SERVO_FAULT AT %IX1.7 : BOOL;
-	STORE_SERVO_FAULT AT %IX2.0 : BOOL;
-	SPARE21 AT %IX2.1 : BOOL;
-	SPARE22 AT %IX2.2 : BOOL;
-	ELEVATER_MAN_AUTO_SW AT %IX2.3 : BOOL;
-	ELEVATER_START_PB AT %IX2.4 : BOOL;
-	ELEVATER_RESET_PB AT %IX2.5 : BOOL;
-	ELEVATER_STOP_PB AT %IX2.6 : BOOL;
-	ELEVATER_E_STOP AT %IX2.7 : BOOL;
-	SPARE30 AT %IX3.0 : BOOL;
-	SPARE31 AT %IX3.1 : BOOL;
-	MAKEREXIT_SENSOR AT %IX3.2 : BOOL;
-	SAMPLE_ENTRANCE_SENSOR AT %IX3.3 : BOOL;
-	SAMPLE_ENTRANCE_JAM_SENSOR AT %IX3.4 : BOOL;
-	CORNER_ENTRANCE_JAM_SENSOR AT %IX3.5 : BOOL;
-	MAKEREXIT_JAM_SENSOR AT %IX3.6 : BOOL;
-	SPARE37 AT %IX3.7 : BOOL;
-	STOREUNIT_MAN_AUTO_SW AT %IX4.0 : BOOL;
-	SPARE41 AT %IX4.1 : BOOL;
-	STOREUNIT_START_BUTTON AT %IX4.2 : BOOL;
-	STOREUNIT_RESET_BUTTON AT %IX4.3 : BOOL;
-	STOREUNIT_STOP_BUTTON AT %IX4.4 : BOOL;
-	STOREUNIT_E_STOP_BUTTON AT %IX4.5 : BOOL;
-	SPARE46 AT %IX4.6 : BOOL;
-	SPARE47 AT %IX4.7 : BOOL;
-	DOWNPORT_JAM_SENSOR AT %IX5.0 : BOOL;
-	SLOPE_EMPTY AT %IX5.1 : BOOL;
-	TRANSFER_CIG_EXIST AT %IX5.2 : BOOL;
-	TRANSFER_OVERLOAD_SENSOR AT %IX5.3 : BOOL;
-	SPARE54 AT %IX5.4 : BOOL;
-	SPARE55 AT %IX5.5 : BOOL;
-	SPARE56 AT %IX5.6 : BOOL;
-	SPARE57 AT %IX5.7 : BOOL;
-	STORE_FULL AT %IX6.0 : BOOL;
-	STORE_EMPTY AT %IX6.1 : BOOL;
-	STORE_OVERLOAD AT %IX6.2 : BOOL;
-	STORE_ENTRANCE_CIG_EXIST AT %IX6.3 : BOOL;
-	STORE_ENTRANCE_JAM AT %IX6.4 : BOOL;
-	STORE_OVERLIMIT AT %IX6.5 : BOOL;
-	STORE_RUNNING AT %IX6.6 : BOOL;
-	STORE_ENABLED AT %IX6.7 : BOOL;
-	SAMPLE_SERVO_ENABLE_Q AT %QX4.0 : BOOL;
-	CORNER_SERVO_ENABLE_Q AT %QX4.1 : BOOL;
-	LIFT_SERVO_ENABLE_Q AT %QX4.2 : BOOL;
-	TRANSFER_SERVO_ENABLE_Q AT %QX4.3 : BOOL;
-	SLOPE_SERVO_ENABLE_Q AT %QX4.4 : BOOL;
-	STORE_SERVO_ENABLE_Q AT %QX4.5 : BOOL;
-	SPAREOUTPUT46 AT %QX4.6 : BOOL;
-	SPAREOUTPUT47 AT %QX4.7 : BOOL;
-	ELEVATER_START_Q AT %QX5.0 : BOOL;
-	ELEVATER_RESET_Q AT %QX5.1 : BOOL;
-	ELEVATER_STOP_Q AT %QX5.2 : BOOL;
-	STORE_FAULTRESET_Q AT %QX5.3 : BOOL;
-	MAKER_ENABLE_RELAY_Q AT %QX5.4 : BOOL;
-	SPAREOUTPUT55 AT %QX5.5 : BOOL;
-	SPAREOUTPUT56 AT %QX5.6 : BOOL;
-	MAKER_QUICKSTOP_Q AT %QX5.7 : BOOL;
-	SPAREOUTPUT80 AT %QX8.0 : BOOL;
-	SPAREOUTPUT81 AT %QX8.1 : BOOL;
-	PACKER_ENABLE_RELAY_Q AT %QX8.2 : BOOL;
-	PACKER_LOWSPEED_REQUEST_Q AT %QX8.3 : BOOL;
-	SPAREOUTPUT84 AT %QX8.4 : BOOL;
-	SPAREOUTPUT85 AT %QX8.5 : BOOL;
-	SPAREOUTPUT86 AT %QX8.6 : BOOL;
-	STOREUNIT_START_Q AT %QX8.7 : BOOL;
-	STOREUNIT_RESET_Q AT %QX9.0 : BOOL;
-	STOREUNIT_STOP_Q AT %QX9.1 : BOOL;
-	SPAREOUTPUT92 AT %QX9.2 : BOOL;
-	SPAREOUTPUT93 AT %QX9.3 : BOOL;
-	SPAREOUTPUT94 AT %QX9.4 : BOOL;
-	SPAREOUTPUT95 AT %QX9.5 : BOOL;
-	SPAREOUTPUT96 AT %QX9.6 : BOOL;
-	SPAREOUTPUT97 AT %QX9.7 : BOOL;]]>
-			</Comment>
 			<IGroup>16416</IGroup>
 			<IOffset>274</IOffset>
 			<BitSize>16</BitSize>
@@ -1209,10 +1113,10 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Input">.Spare10</Name>
+			<Name Static="Input">.DropTrans_power</Name>
 			<Type>BOOL</Type>
 			<Comment>
-				<![CDATA[备用]]>
+				<![CDATA[下降口输送伺服主电源]]>
 			</Comment>
 			<IGroup>61473</IGroup>
 			<IOffset>8</IOffset>
@@ -1299,7 +1203,7 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Input">.Spare21</Name>
+			<Name Static="Input">.DropTrans_servo_fault</Name>
 			<Type>BOOL</Type>
 			<Comment>
 				<![CDATA[备用]]>
@@ -1339,30 +1243,30 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Input">.Elevater_reset_pb</Name>
+			<Name Static="Input">.DropTransLowLevel</Name>
 			<Type>BOOL</Type>
 			<Comment>
-				<![CDATA[备用]]>
+				<![CDATA[下降口输送低料位]]>
 			</Comment>
 			<IGroup>61473</IGroup>
 			<IOffset>21</IOffset>
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Input">.Elevater_stop_pb</Name>
+			<Name Static="Input">.DropTransHighLevel</Name>
 			<Type>BOOL</Type>
 			<Comment>
-				<![CDATA[备用]]>
+				<![CDATA[下降口输送高料位]]>
 			</Comment>
 			<IGroup>61473</IGroup>
 			<IOffset>22</IOffset>
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Input">.Elevater_e_stop</Name>
+			<Name Static="Input">.DropTransLimitLevel</Name>
 			<Type>BOOL</Type>
 			<Comment>
-				<![CDATA[备用]]>
+				<![CDATA[下降口输送极限料位]]>
 			</Comment>
 			<IGroup>61473</IGroup>
 			<IOffset>23</IOffset>
@@ -1676,10 +1580,10 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Output">.SpareOutput46</Name>
+			<Name Static="Output">.DropTrans_servo_enable_Q</Name>
 			<Type>BOOL</Type>
 			<Comment>
-				<![CDATA[备用]]>
+				<![CDATA[下降口输送伺服驱动器使能]]>
 			</Comment>
 			<IGroup>61489</IGroup>
 			<IOffset>38</IOffset>
@@ -1936,6 +1840,26 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
+			<Name Static="MArea">.DropTrans_servo_enable</Name>
+			<Type>BOOL</Type>
+			<Comment>
+				<![CDATA[下降口输送驱动器使能]]>
+			</Comment>
+			<IGroup>16417</IGroup>
+			<IOffset>24821</IOffset>
+			<BitSize>1</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="MArea">.DropTrans_servo_initialized</Name>
+			<Type>BOOL</Type>
+			<Comment>
+				<![CDATA[下降口输送初始完成]]>
+			</Comment>
+			<IGroup>16417</IGroup>
+			<IOffset>24823</IOffset>
+			<BitSize>1</BitSize>
+		</Symbol>
+		<Symbol>
 			<Name Static="MArea">.MakerExit_servo_enable</Name>
 			<Type>BOOL</Type>
 			<IGroup>16417</IGroup>
@@ -2045,6 +1969,16 @@
 			<Type>BOOL</Type>
 			<IGroup>16417</IGroup>
 			<IOffset>402</IOffset>
+			<BitSize>1</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="MArea">.alarm_droptrans_jam</Name>
+			<Type>BOOL</Type>
+			<Comment>
+				<![CDATA[下降口输送堵塞]]>
+			</Comment>
+			<IGroup>16417</IGroup>
+			<IOffset>7368</IOffset>
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
@@ -2188,8 +2122,11 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="MArea">.Spare26007</Name>
+			<Name Static="MArea">.DropTrans_servo_ethercat_fault</Name>
 			<Type>BOOL</Type>
+			<Comment>
+				<![CDATA[下降口输送伺服通讯卡故障]]>
+			</Comment>
 			<IGroup>16417</IGroup>
 			<IOffset>20807</IOffset>
 			<BitSize>1</BitSize>
@@ -2492,42 +2429,52 @@
 			<Name Static="MArea">.Sample_Servo_FaultNum</Name>
 			<Type>DWORD</Type>
 			<IGroup>16416</IGroup>
-			<IOffset>2802</IOffset>
+			<IOffset>2804</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Static="MArea">.Corner_Servo_FaultNum</Name>
 			<Type>DWORD</Type>
 			<IGroup>16416</IGroup>
-			<IOffset>2804</IOffset>
+			<IOffset>2808</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Static="MArea">.Lift_Servo_FaultNum</Name>
 			<Type>DWORD</Type>
 			<IGroup>16416</IGroup>
-			<IOffset>2806</IOffset>
+			<IOffset>2812</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Static="MArea">.Transfer_Servo_FaultNum</Name>
 			<Type>DWORD</Type>
 			<IGroup>16416</IGroup>
-			<IOffset>2808</IOffset>
+			<IOffset>2816</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Static="MArea">.Slope_Servo_FaultNum</Name>
 			<Type>DWORD</Type>
 			<IGroup>16416</IGroup>
-			<IOffset>2810</IOffset>
+			<IOffset>2820</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Static="MArea">.Store_Servo_FaultNum</Name>
 			<Type>DWORD</Type>
 			<IGroup>16416</IGroup>
-			<IOffset>2812</IOffset>
+			<IOffset>2824</IOffset>
+			<BitSize>32</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="MArea">.DropTrans_Servo_FaultNum</Name>
+			<Type>DWORD</Type>
+			<Comment>
+				<![CDATA[下降口输送伺服驱动器故障代码]]>
+			</Comment>
+			<IGroup>16416</IGroup>
+			<IOffset>2828</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>

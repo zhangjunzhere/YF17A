@@ -20,7 +20,7 @@
     </Page.Resources>
 
     <Canvas >      
-        <TextBlock Name="tb_console_input_status" Canvas.Left="337" Canvas.Top="1" FontSize="32" Foreground="#FF1A0F0F" Text="控制柜状态" />
+        <TextBlock Name="tb_console_input_status" Canvas.Left="285" Canvas.Top="0" FontSize="32" Foreground="#FF1A0F0F" Text="YF17 控制柜状态" />
         <TextBlock Name="tb_page_indictor" Canvas.Left="605" Canvas.Top="0" FontSize="32" Foreground="#FFBA4141"  Text="1/4" />
         <Button Canvas.Left="188" Canvas.Top="5" Content="上一页" FontSize="22" Name="btn_part1" Click="btn_part1_Click" />
         <Button Canvas.Left="669" Canvas.Top="5" Content="下一页" FontSize="22" Name="btn_part2" Click="btn_part2_Click" />

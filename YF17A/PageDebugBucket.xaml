@@ -21,6 +21,7 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -29,47 +30,64 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
-                </Grid.RowDefinitions>
-                           
-                <TextBlock  Text="斜向驱动器" Grid.Row="0"  Grid.Column="1"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <TextBlock  Text="存储驱动器" Grid.Row="0"  Grid.Column="2"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
-
-                <TextBlock  Text="驱动器主电源" Grid.Row="1"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                <TextBlock  Text="驱动器准备好" Grid.Row="2"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                <TextBlock  Text="初始化完成" Grid.Row="3"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                <TextBlock  Text="驱动器使能" Grid.Row="4"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                <TextBlock  Text="伺服电机转速" Grid.Row="5"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
-
+                </Grid.RowDefinitions>                           
+             
                 <!--驱动器主电源	I0.3   指示灯	I0.4  指示灯-->
                 <!-- Slope_power	Bool	斜向伺服主电源	Q10	只读	指示灯/报警条显示	I0.3-->
                 <Image Name="iv_Slope_power" Grid.Row="1"  Grid.Column="1"  Source="/YF17A;component/image/help.png" Stretch="None"/>
                 <!--Store_power	Bool	存储伺服主电源	Q11	只读	指示灯/报警条显示	I0.4-->
                 <Image  Name="iv_Store_power"  Grid.Row="1"  Grid.Column="2"  Source="/YF17A;component/image/help.png" Stretch="None"/>
-                       
+                <!--DropTrans_power	Bool	存储伺服主电源	Q11	只读	指示灯/报警条显示	I0.4-->
+                <Image  Name="iv_DropTrans_power"  Grid.Row="1"  Grid.Column="3"  Source="/YF17A;component/image/help.png" Stretch="None"/>
+
+                
                 <!--驱动器准备好	I0.7  指示灯	I1.0  指示灯-->     
                 <!-- Slope_servo_fault	Bool	斜向伺服控制器故障	A18	只读	指示灯/报警条显示	I0.7-->
                 <Image Name="iv_Slope_servo_fault" Grid.Row="2"  Grid.Column="1"   Source="/YF17A;component/image/help.png" Stretch="None"/>
                 <!--Store_servo_fault	Bool	存储伺服控制器故障	A19	只读	指示灯/报警条显示	I1.0-->
                 <Image Name="iv_Store_servo_fault"  Grid.Row="2"  Grid.Column="2"  Source="/YF17A;component/image/help.png"    Stretch="None"/>
-                
+                <Image  Name="iv_DropTrans_servo_fault"  Grid.Row="2"  Grid.Column="3"  Source="/YF17A;component/image/help.png" Stretch="None"/>
+
                 <!--初始化完成	M1702.7 指示灯	M1702.7 指示灯-->
                 <!--Slope_servo_initialized	Bool	斜向驱动器初始完成		只读	指示灯	M1702.7-->
                 <Image Name="iv_Slope_servo_initialized"  Grid.Row="3"  Grid.Column="1"   Source="/YF17A;component/image/help.png" Stretch="None"/>
                 <Image   Grid.Row="3"  Grid.Column="2"    Source="{Binding Source,ElementName=iv_Slope_servo_initialized}" Stretch="None"/>
-                
+                <Image  Name="iv_DropTrans_servo_initialized"  Grid.Row="3"  Grid.Column="3"  Source="/YF17A;component/image/help.png" Stretch="None"/>
+
                 <!--驱动器使能	M1702.5 指示灯	M1802.5 指示灯-->
                 <!--Slope_servo_enable	Bool	斜向驱动器使能		只读	指示灯	M1702.5-->
                 <Image Name="iv_Slope_servo_enable"  Grid.Row="4"  Grid.Column="1"   Source="/YF17A;component/image/help.png"  Stretch="None" />
                 <!--Store_servo_enable	Bool	存储驱动器使能		只读	指示灯	M1802.5-->
                 <Image Name="iv_Store_servo_enable"  Grid.Row="4"  Grid.Column="2"  Source="/YF17A;component/image/help.png" Stretch="None" />
-                
+                <Image Name="iv_DropTrans_servo_enable"  Grid.Row="4"  Grid.Column="3"  Source="/YF17A;component/image/help.png" Stretch="None" />
+
                 <!--伺服电机转速	MW1736  数值显示	MW1738  数值显示-->
                 <!--Slope_speed_rpm	Int	斜向电机转速		只读	数值显示	MW1736-->
-                <Button  Name="tb_Slope_speed_rpm"  Content="1001" Grid.Row="5"  Grid.Column="1"  Foreground="Black" Style="{StaticResource SpeedButtonStyle}" Margin="0,30,56,28" />
+                <Button  Name="tb_Slope_speed_rpm"  Content="1001" Grid.Row="5" Foreground="Black" Style="{StaticResource SpeedButtonStyle}" Margin="0,37,15,31" Grid.Column="1" />
                 <!--Store_speed_rpm	Int	存储电机转速		只读	数值显示	MW1738-->
-                <Button  Name="tb_Store_speed_rpm"  Content="1002" Grid.Row="5"  Grid.Column="2" Foreground="Black" Style="{StaticResource SpeedButtonStyle}" Margin="0,31,51,26" />
-                <TextBlock Text="转/分" Style="{StaticResource UnitTextStyle}" Margin="0,32,3,0"   Grid.Column="1" Grid.Row="5" />
-                <TextBlock Text="转/分" Margin="0,32,0,0" Style="{StaticResource UnitTextStyle}" Grid.Column="2" Grid.Row="5" />
+                <Button  Name="tb_Store_speed_rpm"  Content="1002" Grid.Row="5"  Grid.Column="2" Foreground="Black" Style="{StaticResource SpeedButtonStyle}" Margin="0,31,23,26" />
+                <Button  Name="tb_DropTrans_speed_rpm"  Content="1002" Grid.Row="5"  Grid.Column="3" Foreground="Black" Style="{StaticResource SpeedButtonStyle}" Margin="0,31,23,26" />
+
+                <TextBlock Style="{StaticResource UnitTextStyle}" Margin="0,56,17,0"   Grid.Column="1" Grid.Row="5" />
+                <TextBlock Margin="0,55,23,0" Style="{StaticResource UnitTextStyle}" Grid.Column="2" Grid.Row="5" />
+
+                <TextBlock  Text="斜向" Grid.Row="0"  Grid.Column="1"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock Text="驱动器" FontSize="20" HorizontalAlignment="Center" Margin="17,55,13,5"  VerticalAlignment="Center" Grid.Column="1" Width="64" />
+                <TextBlock  Text="存储" Grid.Row="0"  Grid.Column="2"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="驱动器" Grid.Row="1" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,31,0,31" />
+                <TextBlock  Text="驱动器" Grid.Row="2" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,31,0,31" />
+                <TextBlock  Text="初始化" Grid.Row="3"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBlock  Text="驱动器" Grid.Row="4" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,31" />
+                <TextBlock  Text="伺服电机" Grid.Row="5"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="15,56,15,5" Text="驱动器" VerticalAlignment="Center" Width="64" Grid.Column="2" />
+                <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="3,55,13,5" Text="送驱动器" VerticalAlignment="Center" Width="78" Grid.Column="3" />
+                <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="0,0,6,31" Text="下降口输" VerticalAlignment="Bottom" Width="88" Grid.Column="3" />
+                <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="6,52,0,0" Text="主电源" VerticalAlignment="Top" Grid.Row="1" />
+                <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="4,53,0,8" Text="准备好" VerticalAlignment="Center" Grid.Row="2" />
+                <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="6,55,0,6" Text="完成" VerticalAlignment="Center" Grid.Row="3" />
+                <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="8,54,0,6" Text="使能" VerticalAlignment="Center" Grid.Row="4" />
+                <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="15,56,0,5" Text="转速" VerticalAlignment="Center" Grid.Row="5" />
+                <TextBlock Margin="0,55,25,0" Style="{StaticResource UnitTextStyle}" Grid.Column="3" Grid.Row="5" />
             </Grid>
         </Border>
        

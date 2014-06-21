@@ -185,7 +185,7 @@ namespace YF17A
                 //Store_power AT %IX0.7:BOOL;(*存储伺服主电源*)
             
                   // /******  I1.0- I1.7 *************/
-                new StatusInfo(){PlcName=".Spare10", Title="I1.0 备用"},
+                new StatusInfo(){PlcName=".DropTrans_power", Title="I1.0 下降口输送伺服主电源"},
                 new StatusInfo(){PlcName=".Spare11", Title="I1.1 备用"},
                 new StatusInfo(){PlcName=".MakerExit_servo_fault", Title="I1.2 备用"},
                 new StatusInfo(){PlcName=".Sample_servo_fault", Title="I1.3 取样伺服驱动异常"},
@@ -203,7 +203,7 @@ namespace YF17A
                 //Slope_servo_fault AT %IX1.7:BOOL;(*斜向伺服控制器故障*)
                 // /******  I2.0- I2.7 *************/
                 new StatusInfo(){PlcName=".Store_servo_fault", Title="I2.0 存储伺服控制器故障"},
-                new StatusInfo(){PlcName=".Spare21", Title="I2.1 备用"},  
+                new StatusInfo(){PlcName=".DropTrans_servo_fault", Title="I2.1 下降口输送驱动器准备好"},  
                 new StatusInfo(){PlcName=".Spare22", Title="I2.2 备用"}, 
                 new StatusInfo(){PlcName=".Elevater_man_auto_sw", Title="I2.3 备用"},	  
                 //Store_servo_fault AT %IX2.0:BOOL;(*存储伺服控制器故障*)
@@ -214,13 +214,10 @@ namespace YF17A
 
             public static StatusInfo[] IQStatusInfos1 = new StatusInfo[]{
                 new StatusInfo(){PlcName=".Elevater_start_pb", Title="I2.4 备用"},	
-                new StatusInfo(){PlcName=".Elevater_reset_pb",Title="I2.5 备用"},	
-                new StatusInfo(){PlcName=".Elevater_stop_pb", Title="I2.6 备用"},
-                new StatusInfo(){PlcName=".Elevater_e_stop", Title="I2.7 备用"},	
-                //Elevater_start_pb AT %IX2.4:BOOL;(*备用*)
-                //Elevater_reset_pb AT %IX2.5:BOOL;(*备用*)
-                //Elevater_stop_pb AT %IX2.6:BOOL;(*备用*)
-                //Elevater_e_stop AT %IX2.7:BOOL;(*备用*)
+                new StatusInfo(){PlcName=".DropTransLowLevel",Title="I2.5 下降口输送低料位"},	
+                new StatusInfo(){PlcName=".DropTransHighLevel", Title="I2.6 下降口输送高料位"},
+                new StatusInfo(){PlcName=".DropTransLimitLevel", Title="I2.7 下降口输送极限料位"},
+               
                 // /******  I3.0- I3.7 *************/          
                 new StatusInfo(){PlcName=".Spare30", Title="I3.0 备用"},  
                 new StatusInfo(){PlcName=".Spare31", Title="I3.1 备用"}, 
@@ -287,7 +284,7 @@ namespace YF17A
                   new StatusInfo(){PlcName=".Transfer_servo_enable_Q", Title="Q4.3 传送伺服驱动器使能"},
                   new StatusInfo(){PlcName=".Slope_servo_enable_Q",Title="Q4.4 斜向伺服驱动器使能"},
                   new StatusInfo(){PlcName=".Store_servo_enable_Q", Title="Q4.5 存储伺服驱动器使能"},                  
-                  new StatusInfo(){PlcName=".SpareOutput46", Title="Q4.6 备用"}, 
+                  new StatusInfo(){PlcName=".DropTrans_servo_enable_Q", Title="Q4.6 下降口输送伺服驱动器使能"}, 
                   new StatusInfo(){PlcName=".SpareOutput47", Title="Q4.7 备用"}, 
                      //sample_servo_enable_Q AT %QX4.0:BOOL;(*取样伺服驱动器使能*)
                 //Corner_servo_enable_Q AT %QX4.1:BOOL;(*弯道伺服驱动器使能*)

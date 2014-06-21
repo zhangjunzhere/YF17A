@@ -143,8 +143,7 @@ namespace YF17A
                     value = fValue;
                 }
 
-                if (plcVarName.Equals(".Store_cig_speed") || plcVarName.Equals(".Slope_cig_speed") || plcVarName.Equals(".Store_speed_rpm") || plcVarName.Equals(".Slope_speed_rpm"))
-                    //|| (plcVarName.Equals(".Store_speed_rpm"))// || plcVarName.Equals(".Slope_speed_rpm"))
+                if (plcVarName.Equals(".Store_cig_speed") || plcVarName.Equals(".Slope_cig_speed"))
                 {
                     //convert unsigned integer into integer
                     int lValue = (int)value;
@@ -407,23 +406,23 @@ namespace YF17A
             plcVarDescriptionMap.Add(".Elevater_man_auto_sw", "提升机手动/自动方式");
             plcVarDescriptionMap.Add(".Elevater_man_paikong", "手动排空");
             plcVarDescriptionMap.Add(".Elevater_start_pb", "提升机启动按钮");
-            plcVarDescriptionMap.Add(".Elevater_reset_pb", "提升机复位按钮");
-            plcVarDescriptionMap.Add(".Elevater_stop_pb", "提升机停机按钮");
-            plcVarDescriptionMap.Add(".Elevater_e_stop", "提升机紧急停止按钮");
+            plcVarDescriptionMap.Add(".DropTransLowLevel", "下降口输送低料位");
+            plcVarDescriptionMap.Add(".DropTransHighLevel", "下降口输送高料位");
+            plcVarDescriptionMap.Add(".DropTransLimitLevel", "下降口输送极限料位");
             plcVarDescriptionMap.Add(".Lift_power", "提升伺服主电源");
-            plcVarDescriptionMap.Add(".Spare21", "备用");
+            plcVarDescriptionMap.Add(".DropTrans_servo_fault", "备用");
             plcVarDescriptionMap.Add(".Spare22", "备用");
             plcVarDescriptionMap.Add(".Sample_entrance_sensor", "取样入口有烟传感器");
             plcVarDescriptionMap.Add(".Sample_entrance_jam_sensor", "取样入口堵塞传感器（备用）");
             plcVarDescriptionMap.Add(".Corner_entrance_jam_sensor", "弯道入口堵塞传感器");
             plcVarDescriptionMap.Add(".Spare26", "备用");
             plcVarDescriptionMap.Add(".Transfer_power", "传送伺服主电源");
-            plcVarDescriptionMap.Add(".StoreUnit_man_auto_sw", "存储器手动/自动方式");
+            //plcVarDescriptionMap.Add(".StoreUnit_man_auto_sw", "存储器手动/自动方式");
             plcVarDescriptionMap.Add(".StoreUnit_discharge_button", "全排空");
-            plcVarDescriptionMap.Add(".StoreUnit_start_button", "存储器启动按钮");
-            plcVarDescriptionMap.Add(".StoreUnit_reset_button", "存储器复位按钮");
-            plcVarDescriptionMap.Add(".StoreUnit_stop_button", "存储器停机按钮");
-            plcVarDescriptionMap.Add(".StoreUnit_e_stop_button", "存储器紧急停止按钮");
+           // plcVarDescriptionMap.Add(".StoreUnit_start_button", "存储器启动按钮");
+          //  plcVarDescriptionMap.Add(".StoreUnit_reset_button", "存储器复位按钮");
+         //   plcVarDescriptionMap.Add(".StoreUnit_stop_button", "存储器停机按钮");
+          //  plcVarDescriptionMap.Add(".StoreUnit_e_stop_button", "存储器紧急停止按钮");
             plcVarDescriptionMap.Add(".Spare36", "包装机运行（备用）");
             plcVarDescriptionMap.Add(".Spare37", "备用");
             plcVarDescriptionMap.Add(".Downport_jam_sensor", "下降口堵塞传感器");
@@ -576,232 +575,237 @@ namespace YF17A
 
         }
 
-        public String[] plcVariableNameTypes = new String[] {
-                                                "I.Corner_pid_sp",
-                                                "I.Corner_work_limit",
-                                                "I.Corner_work_off_delay",
-                                                "I.Corner_pid_p_gain",
-                                                "I.Corner_p_parameter",
-                                                "I.cig_dim",
-                                                "I.Store_CigIn_Comp_speed1",
-                                                "I.Store_CigIn_Comp_speed2",
-                                                "I.Downport_CigIn_hight2",
-                                                "I.Corner_pid_i_gain",
-                                                "I.Maker_MaxSpeedLimit",
-                                                "I.Packer_MaxSpeedLimit",
-                                                "I.Store_empty_position",
-                                                "I.Store_full_position",
-                                                "I.Packer_LowSpeed_position",
-                                                "I.Packer_enable_position",
-                                                "I.Maker_stop_position",
-                                                "I.Corner_entrance_hight_limit",
-                                                "I.Corner_entrance_low_limt",
-                                                "I.Downport_CigIn_hight1",
-                                                "I.Corner_pid_deadband",
-                                                "I.Downport_CigOut_hight1",
-                                                "I.Downport_CigOut_hight2",
-                                                "I.Store_CigOut_Comp_speed1",
-                                                "I.Store_CigOut_Comp_speed2",
-                                                "I.Downport_Highest_limit",
-                                                "I.Downport_Lowest_limit",
-                                                "I.Downport_CigIn_lowest_hight",
-                                                "B.Store_set_zero",
-                                                "B.test_run",
-                                                "B.StoreUnit_discharge_button",
-                                                "B.Elevater_man_paikong",
-                                                "B.test_run_unprotected",
-                                                "I.test_maker_speed",
-                                                "I.test_packer_speed",
-                                                "I.Corner_manual_speed",
-                                                "I.Store_manual_speed",
-                                                "I.Lift_p_parameter",
-                                                "I.Transfer_p_parameter",
-                                                "I.MakerExport_p_parameter",
-                                                "B.Emergency_stop",
-                                                "B.MakerExit_power",
-                                                "B.Sample_power",
-                                                "B.Corner_power",
-                                                "B.Lift_power",
-                                                "B.Transfer_power",
-                                                "B.Slope_power",
-                                                "B.Store_power",
-                                                "B.Spare10",
-                                                "B.Spare11",
-                                                "B.MakerExit_servo_fault",
-                                                "B.Sample_servo_fault",
-                                                "B.Corner_servo_fault",
-                                                "B.Lift_servo_fault",
-                                                "B.Transfer_servo_fault",
-                                                "B.Slope_servo_fault",
-                                                "B.Store_servo_fault",
-                                                "B.Spare21",
-                                                "B.Spare22",
-                                                "B.Elevater_man_auto_sw",
-                                                "B.Elevater_start_pb",
-                                                "B.Elevater_reset_pb",
-                                                "B.Elevater_stop_pb",
-                                                "B.Elevater_e_stop",
-                                                "B.Spare30",
-                                                "B.Spare31",
-                                                "B.MakerExit_sensor",
-                                                "B.Sample_entrance_sensor",
-                                                "B.Sample_entrance_jam_sensor",
-                                                "B.Corner_entrance_jam_sensor",
-                                                "B.MakerExit_jam_sensor",
-                                                "B.Spare37",
-                                                //"B.StoreUnit_man_auto_sw",
-                                                //"B.Spare41",
-                                                //"B.StoreUnit_start_button",
-                                                //"B.StoreUnit_reset_button",
-                                                //"B.StoreUnit_stop_button",
-                                                //"B.StoreUnit_e_stop_button",
-                                                //"B.Spare46",
-                                                //"B.Spare47",
-                                                "B.Downport_jam_sensor",
-                                                "B.Slope_empty",
-                                                "B.Transfer_cig_exist",
-                                                "B.Transfer_overload_sensor",
-                                                "B.Spare44",
-												"B.Spare45",
-                                                "B.StoreUnit_e_stop_button",
-                                                "B.Spare46",
-                                                "B.Spare47",
-                                                "B.Store_full",
-                                                "B.Store_empty",
-                                                "B.Store_overload",
-                                                "B.Store_entrance_cig_exist",
-                                                "B.Store_entrance_jam",
-                                                "B.Store_overlimit",
-                                                "B.Store_running",
-                                                "B.Store_enabled",
-                                                "B.sample_servo_enable_Q",
-                                                "B.Corner_servo_enable_Q",
-                                                "B.Lift_servo_enable_Q",
-                                                "B.Transfer_servo_enable_Q",
-                                                "B.Slope_servo_enable_Q",
-                                                "B.Store_servo_enable_Q",
-                                                "B.SpareOutput46",
-                                                "B.SpareOutput47",
-                                                "B.Elevater_start_Q",
-                                                "B.Elevater_reset_Q",
-                                                "B.Elevater_stop_Q",
-                                                "B.Store_FaultReset_Q",
-                                                "B.Maker_enable_relay_Q",
-                                                "B.SpareOutput55",
-                                                "B.SpareOutput56",
-                                                "B.Maker_QuickStop_Q",
-                                                "B.SpareOutput80",
-                                                "B.SpareOutput81",
-                                                "B.Packer_enable_relay_Q",
-                                                "B.Packer_LowSpeed_request_Q",
-                                                "B.SpareOutput84",
-                                                "B.SpareOutput85",
-                                                "B.SpareOutput86",
-                                                "B.StoreUnit_start_Q",
-                                                "B.StoreUnit_reset_Q",
-                                                "B.StoreUnit_stop_Q",
-                                                "B.SpareOutput92",
-                                                "B.SpareOutput93",
-                                                "B.SpareOutput94",
-                                                "B.SpareOutput95",
-                                                "B.SpareOutput96",
-                                                "B.SpareOutput97",
-                                                "B.MakerExit_servo_enable",
-                                                "B.MakerExit_servo_initialized",
-                                                "B.sample_servo_enable",
-                                                "B.sample_servo_initialized",
-                                                "B.Corner_servo_enable",
-                                                "B.Corner_servo_initialized",
-                                                "B.Slope_servo_enable",
-                                                "B.Slope_servo_initialized",
-                                                "B.Store_servo_enable",
-                                                "B.Lift_servo_enable",
-                                                "B.Lift_servo_initialized",
-                                                "B.Transfer_servo_enable",
-                                                "B.Transfer_servo_initialized",
-                                                "B.alarm_sample_entrance_jam",
-                                                "B.alarm_corner_entrance_jam",
-                                                "B.alarm_downport_entrance_jam",
-                                                "B.alarm_transfer_overload",
-                                                "B.alarm_store_overload",
-                                                "B.alarm_store_entrance_jam",
-                                                "B.Elevater_manual_discharge",
-                                                "B.Elevater_auto_run",
-                                                "B.StoreUnit_man_run",
-                                                "B.StoreUnit_auto_run",
-                                                "B.StoreUnit_discharge_run",
-                                                "B.alarm_store_limit_on",
-                                                "B.alarm_store_full",
-                                                "B.alarm_encoder_fault",
-                                                "B.Maker_run",
-                                                "B.packer_run",
-                                                "B.MakerExit_servo_ethercat_fault",
-                                                "B.Sample_servo_ethercat_fault",
-                                                "B.Corner_servo_ethercat_fault",
-                                                "B.Lift_servo_ethercat_fault",
-                                                "B.Transfer_servo_ethercat_fault",
-                                                "B.Slope_servo_ethercat_fault",
-                                                "B.Store_servo_ethercat_fault",
-                                                "B.Spare26007",
-                                                "B.Spare26010",
-                                                "B.Digital_Input1_ethercat_fault",
-                                                "B.Digital_Input2_ethercat_fault",
-                                                "B.Digital_Input3_ethercat_fault",
-                                                "B.Digital_Input4_ethercat_fault",
-                                                "B.Digital_Input5_ethercat_fault",
-                                                "B.Digital_Input6_ethercat_fault",
-                                                "B.Digital_Input7_ethercat_fault",
-                                                "B.Digital_Output1_ethercat_fault",
-                                                "B.Digital_Output2_ethercat_fault",
-                                                "B.Digital_Output3_ethercat_fault",
-                                                "B.Digital_Output4_ethercat_fault",
-                                                "B.Analog_Input1_ethercat_fault",
-                                                "B.Analog_Input2_ethercat_fault",
-                                                "B.StoreUnit_Stop",
-                                                "B.Elevater_Stop",
-                                                "B.Manual_Run",
-                                                "B.Auto_Run",
-                                                "B.Elevater_Manual_Run",
-                                                "B.test_run_light",
-                                                "I.Corner_pid_output",
-                                                "I.Corner_pid_pv",
-                                                "I.DownPort_hight",
-                                                "I.Store_percent",
-                                                "I.Downport_comp_output",
-                                                "I.Maker_cig_speed",
-                                                "I.Sample_cig_speed",
-                                                "I.Corner_cig_speed",
-                                                "I.Packer_cig_speed",
-                                                "I.Life_cig_speed",
-                                                "I.Transfer_cig_speed",
-                                                "I.MakerExport_cig_speed",
-                                                "I.MakerExport_speed_rpm",
-                                                "I.Sample_speed_rpm",
-                                                "I.Corner_speed_rpm",
-                                                "I.Slope_speed_rpm",
-                                                "I.Store_speed_rpm",
-                                                "I.Corner_entrance_sensor_output",
-                                                "I.Downport_sensor_output",
-                                                "I.Store_CigNum",
-                                                "I.Store_CigNum2",
-                                                "I.Store_cig_speed",
-                                                "I.Slope_cig_speed",
-                                                "I.Lift_speed_rpm",
-                                                "I.Transfer_speed_rpm",
+       public String[] plcVariableNameTypes = new String[] {
+                                                "I.CigMakingSpeed",// AT %IW330",//:INT;
+                                                "I.PackingSpeed",// AT %IW332",//:INT;
+                                                "I.PotenSpeed",// AT %IW328",//:INT;
+                                                "I.ElevatorLevel",// AT %IW324",//:INT;
+                                                "I.DropLevel",// AT %IW326",//:INT;
+                                                "B.Store_set_zero",// AT %MX1000.0 : BOOL;
+                                                "B.test_run",// AT %MX1000.6 : BOOL;
+                                                "B.StoreUnit_discharge_button",// AT %MX2603.6 : BOOL;
+                                                "B.Elevater_man_paikong",// AT %MX2603.7 :BOOL;
+                                                "B.test_run_unprotected",// AT %MX1000.7 : BOOL;
+                                                "I.test_maker_speed",// AT %MW1950 : INT;
+                                                "I.test_packer_speed",// AT %MW1952 : INT;
+                                                "I.Corner_manual_speed",// AT %MW254 : INT;
+                                                "I.Store_manual_speed",// AT %MW260 : INT;
+                                                "I.DropTrans_cig_speed",// AT %MW2320 : INT;(*下降口输送烟支速度*)(*******7Axis**********)
+                                                "I.DropTrans_speed_rpm",// AT %MW2340 : INT;(*下降口输送电机转速*)(******7Axis***********)
 
-                                                "I.MakerExport_Servo_FaultNum",
-                                                "I.Sample_Servo_FaultNum",
-                                                "I.Corner_Servo_FaultNum",
-                                                "I.Lift_Servo_FaultNum",
-                                                "I.Transfer_Servo_FaultNum",
-                                                "I.Slope_Servo_FaultNum",
-                                                "I.Store_Servo_FaultNum",
-                                                "I.Corner_lowlimit",   
-                                                "I.CigMakingSpeed",
-	                                            "I.PackingSpeed",      
-	                                            "I.PotenSpeed",     
-	                                            "I.ElevatorLevel",    
-	                                            "I.DropLevel",      
+                                                "I.Lift_p_parameter",// AT %MW270 : INT;
+                                                "I.Transfer_p_parameter",// AT %MW272 : INT;
+                                                "I.MakerExport_p_parameter",// AT %MW274 : INT;
+
+                                                "B.Emergency_stop",// AT %IX0.0:BOOL;(*紧急停止继电器*)
+                                                "B.MakerExit_power",// AT %IX0.1:BOOL;(*备用*)
+                                                "B.Sample_power",// AT %IX0.2:BOOL;(*取样伺服主电源*)
+                                                "B.Corner_power",// AT %IX0.3:BOOL;(*弯道伺服主电源*)
+                                                "B.Lift_power",// AT %IX0.4:BOOL;(*提升伺服主电源*)
+                                                "B.Transfer_power",// AT %IX0.5:BOOL;(*传送伺服主电源*)
+                                                "B.Slope_power",// AT %IX0.6:BOOL;(*斜向伺服主电源*)
+                                                "B.Store_power",// AT %IX0.7:BOOL;(*存储伺服主电源*)
+                                                "B.DropTrans_power",// AT %IX1.0:BOOL;(*下降口输送伺服主电源*)(****************************************************7Axis中用DropTrans_power替换原Spare10*************)
+
+                                                "B.Spare11",// AT %IX1.1:BOOL;(*备用*)
+                                                "B.MakerExit_servo_fault",// AT %IX1.2:BOOL;(*备用*)
+                                                "B.Sample_servo_fault",// AT %IX1.3:BOOL;(*取样伺服控制器故障*)
+                                                "B.Corner_servo_fault",// AT %IX1.4:BOOL;(*弯道伺服控制器故障*)
+                                                "B.Lift_servo_fault",// AT %IX1.5:BOOL;(*提升伺服控制器故障*)
+                                                "B.Transfer_servo_fault",// AT %IX1.6:BOOL;(*传送伺服控制器故障*)
+                                                "B.Slope_servo_fault",// AT %IX1.7:BOOL;(*斜向伺服控制器故障*)
+                                                "B.Store_servo_fault",// AT %IX2.0:BOOL;(*存储伺服控制器故障*)
+                                                "B.DropTrans_servo_fault",// AT %IX2.1:BOOL;(*备用*)(********************************************************************7Axis中用DropTrans_servo_fault替换原Spare21*************)
+                                                "B.Spare22",// AT %IX2.2:BOOL;(*备用*)
+                                                "B.Elevater_man_auto_sw",// AT %IX2.3:BOOL;(*备用*)
+                                                "B.Elevater_start_pb",// AT %IX2.4:BOOL;(*备用*)
+                                                "B.DropTransLowLevel",// AT %IX2.5:BOOL;(*下降口输送低料位*)(********************************************************7Axis中用DropTransLowLevel替换原Elevater_reset_pb*************)
+                                                "B.DropTransHighLevel",// AT %IX2.6:BOOL;(*下降口输送高料位*)(******************************************************7Axis中用DropTransHighLevel替换原Elevater_stop_pb*************)
+                                                "B.DropTransLimitLevel",// AT %IX2.7:BOOL;(*下降口输送极限料位*)(*****************************************************7Axis中用DropTransLimitLevel替换原Elevater_e_stop*************)
+                                                "B.Spare30",// AT %IX3.0:BOOL;(*备用*)
+                                                "B.Spare31",// AT %IX3.1:BOOL;(*备用*)
+                                                "B.MakerExit_sensor",// AT %IX3.2:BOOL;(*卷烟机出口有烟(备用)*)
+                                                "B.Sample_entrance_sensor",// AT %IX3.3:BOOL;(*取样入口有烟传感器*)
+                                                "B.Sample_entrance_jam_sensor",// AT %IX3.4:BOOL;(*取样入口堵塞传感器（备用）*)
+                                                "B.Corner_entrance_jam_sensor",// AT %IX3.5:BOOL;(*弯道入口堵塞传感器*)
+                                                "B.MakerExit_jam_sensor",// AT %IX3.6:BOOL;(*卷烟机出口堵塞（备用）*)
+                                                "B.Spare37",// AT %IX3.7:BOOL;(*备用*)
+                                                "B.Downport_jam_sensor",// AT %IX4.0:BOOL;(*下降口堵塞传感器*)
+                                                "B.Slope_empty",// AT %IX4.1:BOOL;(*斜向通道空*)
+                                                "B.Transfer_cig_exist",// AT %IX4.2:BOOL;(*高架烟支传感器*)
+                                                "B.Transfer_overload_sensor",// AT %IX4.3:BOOL;(*传送过载传感器*)
+                                                "B.Spare44",// AT %IX4.4:BOOL;(*备用*)
+                                                "B.Spare45",// AT %IX4.5:BOOL;(*备用*)
+                                                "B.StoreUnit_e_stop_button",//:BOOL;
+                                                "B.Spare46",// AT %IX4.6:BOOL;(*备用*)
+                                                "B.Spare47",// AT %IX4.7:BOOL;(*备用*)
+                                                "B.Store_full",// AT %IX5.0:BOOL;(*存储器满传感器*)
+                                                "B.Store_empty",// AT %IX5.1:BOOL;(*存储器空传感器*)
+                                                "B.Store_overload",// AT %IX5.2:BOOL;(*存储器过载传感器*)
+                                                "B.Store_entrance_cig_exist",// AT %IX5.3:BOOL;(*存储器入口有烟传感器*)
+                                                "B.Store_entrance_jam",// AT %IX5.4:BOOL;(*存储器入口堵塞*)
+                                                "B.Store_overlimit",// AT %IX5.5:BOOL;(*存储器极限开关*)
+                                                "B.Store_running",// AT %IX5.6:BOOL;(*存储器运行中*)
+                                                "B.Store_enabled",// AT %IX5.7:BOOL;(*存储器使能*)
+                                                "B.sample_servo_enable_Q",// AT %QX4.0:BOOL;(*取样伺服驱动器使能*)
+                                                "B.Corner_servo_enable_Q",// AT %QX4.1:BOOL;(*弯道伺服驱动器使能*)
+                                                "B.Lift_servo_enable_Q",// AT %QX4.2:BOOL;(*提升伺服驱动器使能*)
+                                                "B.Transfer_servo_enable_Q",// AT %QX4.3:BOOL;(*传送伺服驱动器使能*)
+                                                "B.Slope_servo_enable_Q",// AT %QX4.4:BOOL;(*斜向伺服驱动器使能*)
+                                                "B.Store_servo_enable_Q",// AT %QX4.5:BOOL;(*存储伺服驱动器使能*)
+                                                "B.DropTrans_servo_enable_Q",// AT %QX4.6:BOOL;(*下降口输送伺服驱动器使能*)(*******************************7Axis中用DropTrans_servo_enable_Q替换原SpareOutput46*************)
+                                                "B.SpareOutput47",// AT %QX4.7:BOOL;(*备用*)
+                                                "B.Elevater_start_Q",// AT %QX5.0:BOOL;(*备用*)
+                                                "B.Elevater_reset_Q",// AT %QX5.1:BOOL;(*备用*)
+                                                "B.Elevater_stop_Q",// AT %QX5.2:BOOL;(*备用*)
+                                                "B.Store_FaultReset_Q",// AT %QX5.3:BOOL;(*存储器故障复位*)
+                                                "B.Maker_enable_relay_Q",// AT %QX5.4:BOOL;(*卷烟机允许(备用)*)
+                                                "B.SpareOutput55",// AT %QX5.5:BOOL;(*下降口急停复位*)
+                                                "B.SpareOutput56",// AT %QX5.6:BOOL;(*备用*)
+                                                "B.Maker_QuickStop_Q",// AT %QX5.7:BOOL;(*卷烟机快停（备用）*)
+                                                "B.SpareOutput80",// AT %QX8.0:BOOL;(*存储振动检测*)
+                                                "B.SpareOutput81",// AT %QX8.1:BOOL;(*备用*)
+                                                "B.Packer_enable_relay_Q",// AT %QX8.2:BOOL;(*包装机允许（备用）*)
+                                                "B.Packer_LowSpeed_request_Q",// AT %QX8.3:BOOL;(*包装机低速请求（备用）*)
+                                                "B.SpareOutput84",// AT %QX8.4:BOOL;(*备用*)
+                                                "B.SpareOutput85",// AT %QX8.5:BOOL;(*系统主电源*)
+                                                "B.SpareOutput86",// AT %QX8.6:BOOL;(*备用*)
+                                                "B.StoreUnit_start_Q",// AT %QX8.7:BOOL;(*备用*)
+                                                "B.StoreUnit_reset_Q",// AT %QX9.0:BOOL;(*备用*)
+                                                "B.StoreUnit_stop_Q",// AT %QX9.1:BOOL;(*备用*)
+                                                "B.SpareOutput92",// AT %QX9.2:BOOL;(*备用*)
+                                                "B.SpareOutput93",// AT %QX9.3:BOOL;(*备用*)
+                                                "B.SpareOutput94",// AT %QX9.4:BOOL;(*备用*)
+                                                "B.SpareOutput95",// AT %QX9.5:BOOL;(*备用*)
+                                                "B.SpareOutput96",// AT %QX9.6:BOOL;(*备用*)
+                                                "B.SpareOutput97",// AT %QX9.7:BOOL;(*备用*)
+
+                                                "B.DropTrans_servo_enable",// AT %MX3102.5:BOOL;(*下降口输送驱动器使能*)(*******************7Axis用*********************************)
+                                                "B.DropTrans_servo_initialized",// AT %MX3102.7:BOOL;(*下降口输送初始完成*)(*******************7Axis用*********************************)
+
+                                                "B.MakerExit_servo_enable",// AT %MX2102.5 : BOOL;
+                                                "B.MakerExit_servo_initialized",// AT %MX2102.7 : BOOL;
+                                                "B.sample_servo_enable",// AT %MX1502.5 : BOOL;
+                                                "B.sample_servo_initialized",// AT %MX1502.7 : BOOL;
+                                                "B.Corner_servo_enable",// AT %MX1602.5 : BOOL;
+                                                "B.Corner_servo_initialized",// AT %MX1602.7 : BOOL;
+                                                "B.Slope_servo_enable",// AT %MX1702.5 : BOOL;
+                                                "B.Slope_servo_initialized",// AT %MX1702.7 : BOOL;
+                                                "B.Store_servo_enable",// AT %MX1802.5 : BOOL;
+                                                "B.Lift_servo_enable",// AT %MX1902.5 : BOOL;
+                                                "B.Lift_servo_initialized",// AT %MX1902.7 : BOOL;
+                                                "B.Transfer_servo_enable",// AT %MX2002.5 : BOOL;
+                                                "B.Transfer_servo_initialized",// AT %MX2002.7 : BOOL;
+                                                "B.alarm_sample_entrance_jam",// AT %MX50.0 : BOOL;
+                                                "B.alarm_corner_entrance_jam",// AT %MX50.1 : BOOL;
+                                                "B.alarm_downport_entrance_jam",// AT %MX50.2 : BOOL;
+
+                                                "B.alarm_droptrans_jam",// AT %MX920.8 : BOOL;(*下降口输送堵塞*)(*******************7Axis用*********************************)
+                                                "B.alarm_transfer_overload",// AT %MX50.3 : BOOL;
+                                                "B.alarm_store_overload",// AT %MX50.4 : BOOL;
+                                                "B.alarm_store_entrance_jam",// AT %MX50.5 : BOOL;
+                                                "B.Elevater_manual_discharge",// AT %MX501.0 : BOOL;
+                                                "B.Elevater_auto_run",// AT %MX502.1 : BOOL;
+                                                "B.StoreUnit_man_run",// AT %MX550.1 : BOOL;
+                                                "B.StoreUnit_auto_run",// AT %MX552.1 : BOOL;
+                                                "B.StoreUnit_discharge_run",// AT %MX553.7 : BOOL;
+                                                "B.alarm_store_limit_on",// AT %MX60.2 : BOOL;
+                                                "B.alarm_store_full",// AT %MX71.2 : BOOL;
+                                                "B.alarm_encoder_fault",// AT %MX71.3 : BOOL;
+                                                "B.Maker_run",// AT %MX80.0 : BOOL;
+                                                "B.packer_run",// AT %MX80.1 : BOOL;
+                                                "B.MakerExit_servo_ethercat_fault",// AT %MX2600.0 : BOOL;
+                                                "B.Sample_servo_ethercat_fault",// AT %MX2600.1 : BOOL;
+                                                "B.Corner_servo_ethercat_fault",// AT %MX2600.2 : BOOL;
+                                                "B.Lift_servo_ethercat_fault",// AT %MX2600.3 : BOOL;
+                                                "B.Transfer_servo_ethercat_fault",// AT %MX2600.4 : BOOL;
+                                                "B.Slope_servo_ethercat_fault",// AT %MX2600.5 : BOOL;
+                                                "B.Store_servo_ethercat_fault",// AT %MX2600.6 : BOOL;
+                                                "B.DropTrans_servo_ethercat_fault",// AT %MX2600.7 : BOOL;(*下降口输送伺服通讯卡故障*)(*************************7Axis中用DropTrans_servo_ethercat_fault替换原Spare26007*************)
+                                                "B.Spare26010",// AT %MX2601.0 : BOOL;
+                                                "B.Digital_Input1_ethercat_fault",// AT %MX2601.1 : BOOL;
+                                                "B.Digital_Input2_ethercat_fault",// AT %MX2601.2 : BOOL;
+                                                "B.Digital_Input3_ethercat_fault",// AT %MX2601.3 : BOOL;
+                                                "B.Digital_Input4_ethercat_fault",// AT %MX2601.4 : BOOL;
+                                                "B.Digital_Input5_ethercat_fault",// AT %MX2601.5 : BOOL;
+                                                "B.Digital_Input6_ethercat_fault",// AT %MX2601.6 : BOOL;
+                                                "B.Digital_Input7_ethercat_fault",// AT %MX2601.7 : BOOL;
+                                                "B.Digital_Output1_ethercat_fault",// AT %MX2602.0 : BOOL;
+                                                "B.Digital_Output2_ethercat_fault",// AT %MX2602.1 : BOOL;
+                                                "B.Digital_Output3_ethercat_fault",// AT %MX2602.2 : BOOL;
+                                                "B.Digital_Output4_ethercat_fault",// AT %MX2602.3 : BOOL;
+                                                "B.Analog_Input1_ethercat_fault",// AT %MX2602.4 : BOOL;
+                                                "B.Analog_Input2_ethercat_fault",// AT %MX2602.5 : BOOL;
+                                                "B.StoreUnit_Stop",// AT %MX2603.0 : BOOL;
+                                                "B.Elevater_Stop",// AT %MX2603.1 : BOOL;
+                                                "B.Manual_Run",// AT %MX2603.2 : BOOL;
+                                                "B.Auto_Run",// AT %MX2603.3 : BOOL;
+                                                "B.Elevater_Manual_Run",// AT %MX2603.4 : BOOL;
+                                                "B.test_run_light",// AT %MX1002.0 : BOOL;
+                                                "I.Downport_comp_output",// AT %MW1250 : INT;
+                                                "I.Maker_cig_speed",// AT %MW1300 : INT;
+                                                "I.Sample_cig_speed",// AT %MW1302 : INT;
+                                                "I.Corner_cig_speed",// AT %MW1304 : INT;
+                                                "I.Packer_cig_speed",// AT %MW1310 : INT;
+                                                "I.Life_cig_speed",// AT %MW1400 : INT;
+                                                "I.Transfer_cig_speed",// AT %MW1402 : INT;
+                                                "I.MakerExport_cig_speed",// AT %MW1404 : INT;
+                                                "I.MakerExport_speed_rpm",// AT %MW2236 : INT;
+                                                "I.Sample_speed_rpm",// AT %MW1536 : INT;
+                                                "I.Corner_speed_rpm",// AT %MW1636 : INT;
+                                                "I.Slope_speed_rpm",// AT %MW1736 : INT;
+                                                "I.Store_speed_rpm",// AT %MW1738 : INT;
+                                                "I.Corner_entrance_sensor_output",// AT %MW180 : INT;
+                                                "I.Downport_sensor_output",// AT %MW182 : INT;
+                                                "I.Store_CigNum",// AT %MW1880 : INT;
+                                                "I.Store_CigNum2",// AT %MW1882 : INT;
+                                                "I.Store_cig_speed",// AT %MW1884 : INT;
+                                                "I.Slope_cig_speed",// AT %MW1886 : INT;
+                                                "I.Lift_speed_rpm",// AT %MW1936 : INT;
+                                                "I.Transfer_speed_rpm",// AT %MW2036 : INT;
+                                                "I.MakerExport_Servo_FaultNum",// AT %MW2800 : DWORD;
+                                                "I.Sample_Servo_FaultNum",// AT %MW2804 : DWORD;
+                                                "I.Corner_Servo_FaultNum",// AT %MW2808 : DWORD;
+                                                "I.Lift_Servo_FaultNum",// AT %MW2812 : DWORD;
+
+                                                "I.Transfer_Servo_FaultNum",// AT %MW2816 : DWORD;
+                                                "I.Slope_Servo_FaultNum",// AT %MW2820 : DWORD;
+                                                "I.Store_Servo_FaultNum",// AT %MW2824 : DWORD;
+                                                "I.DropTrans_Servo_FaultNum",// AT %MW2828 : DWORD;(*下降口输送伺服驱动器故障代码*)(***********7Axis增加下降口输送电机故障代码**************)
+
+                                                "I.Corner_pid_sp",//:INT;
+                                                "I.Corner_work_limit",//:INT;
+                                                "I.Corner_work_off_delay",//:INT;
+                                                "I.Corner_pid_p_gain",//:INT;
+                                                "I.Corner_p_parameter",//:INT;
+                                                "I.cig_dim",//:INT;
+                                                "I.Store_CigIn_Comp_speed1",//:INT;
+                                                "I.Store_CigIn_Comp_speed2",//:INT;
+                                                "I.Downport_CigIn_hight2",//:INT;
+                                                "I.Corner_pid_i_gain",//:INT;
+                                                "I.Maker_MaxSpeedLimit",//:INT;
+                                                "I.Packer_MaxSpeedLimit",//:INT;
+                                                "I.Store_empty_position",//:INT;
+                                                "I.Store_full_position",//:INT;
+                                                "I.Packer_LowSpeed_position",//:INT;
+                                                "I.Packer_enable_position",//:INT;
+                                                "I.Maker_stop_position",//:INT;
+                                                "I.Corner_entrance_hight_limit",//:INT;
+                                                "I.Corner_entrance_low_limt",//:INT;
+                                                "I.Downport_CigIn_hight1",//:INT;
+                                                "I.Corner_pid_deadband",//:INT;
+                                                "I.Downport_CigOut_hight1",//:INT;
+                                                "I.Downport_CigOut_hight2",//:INT;
+                                                "I.Store_CigOut_Comp_speed1",//:INT;
+                                                "I.Store_CigOut_Comp_speed2",//:INT;
+                                                "I.Downport_Highest_limit",//:INT;
+                                                "I.Downport_Lowest_limit",//:INT;
+                                                "I.Downport_CigIn_lowest_hight",//:INT;
+                                                "I.Corner_pid_output",//:INT;
+                                                "I.Corner_pid_pv",//:INT;
+                                                "I.DownPort_hight",//:INT;
+                                                "I.Store_percent",//:INT;
+                                                "I.Corner_lowlimit",//:INT;
                                         };
 
 

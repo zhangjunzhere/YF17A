@@ -101,16 +101,16 @@
             <!-- Store_full	Bool	存储器满传感器	B-PRX301	只读	指示灯	I5.0-->
         <!-- alarm_store_limit_on	Bool	存储器极限位置到达报警指示		只读	指示灯	M60.2-->
         <!--StoreUnit_e_stop_button	Bool	下降口紧急停止按钮	SB205	只读	指示灯/报警条显示	I3.5-->
-            <Image   Name="iv_StoreUnit_e_stop_button" Source="/YF17A;component/image/light_red.png"  Margin="142,264,0,0" />
-            <Image   Name="help_StoreUnit_e_stop_button" ToolTip="存储器紧急停止按钮" Source="/YF17A;component/image/help.png"  Margin="153,249,0,0" />
+            <!--<Image   Name="iv_StoreUnit_e_stop_button" Source="/YF17A;component/image/light_red.png"  Margin="142,264,0,0" />-->
+            <!--<Image   Name="help_StoreUnit_e_stop_button" ToolTip="下降口紧急停止按钮" Source="/YF17A;component/image/help.png"  Margin="153,249,0,0" />-->
 
             <!-- Emergency_stop	Bool	控制柜紧急停止回路断开	K01	只读	指示灯/报警条显示	I0.0-->
             <Image  Name="iv_Emergency_stop" Source="/YF17A;component/image/light_red.png"  Margin="891,190,0,0" />
             <Image  Name="help_Emergency_stop" ToolTip="控制柜紧急停止回路断开" Source="/YF17A;component/image/help.png"   Margin="904,171,0,0" />
             <!--Elevater_e_stop	Bool	提升机紧急停止按钮	SB105	只读	指示灯/报警条显示	I1.7-->
-        <Image  Name="iv_Elevater_e_stop" Source="/YF17A;component/image/light_red.png"  Margin="857,235,0,0" />
-        <Image  Name="help_Elevater_e_stop" ToolTip="提升机紧急停止按钮"  Source="/YF17A;component/image/help.png"   Margin="866,217,0,0" />
-        <!--Sample_entrance_sensor	Bool	取样入口有烟传感器	B-PSW101	只读	指示灯	I2.3-->
+        <Image  Name="iv_DropTransLimitLevel" Source="/YF17A;component/image/light_red.png"  Margin="857,235,0,0" />
+        <Image  Name="help_DropTransLimitLevel" ToolTip="下降口输送极限料位"  Source="/YF17A;component/image/help.png"   Margin="866,217,0,0" />
+            <!--Sample_entrance_sensor	Bool	取样入口有烟传感器	B-PSW101	只读	指示灯	I2.3-->
             <Image    Name="iv_Sample_entrance_sensor"    Source="/YF17A;component/image/light_yellow.png"    Margin="891,262,0,0" />
             <Image    Name="help_Sample_entrance_sensor"  ToolTip="取样入口有烟传感器"   Source="/YF17A;component/image/help.png"    Margin="904,244,0,0" />
             <!-- alarm_corner_entrance_jam	Bool	弯道入口堵塞报警指示		只读	指示灯/报警条显示	M50.1-->
@@ -153,8 +153,8 @@
                 <!--卷烟机烟支速度（MW1300）Maker_cig_speed -->
                 <TextBlock  Text="卷烟机速度"  Margin="672,21,0,21"  VerticalAlignment="Center" />
                 <Button Name="tb_Maker_cig_speed" Content="60009" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,26,86,24" />
-                <!--烟机出口电机速度：MW1404 MakerExport_cig_speed-->
-            <Button Name="tb_MakerExport_cig_speed" Content="70009" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,47,86,3" Visibility="Hidden" />
+                <!--下降口出口电机速度：MW1404 DropTrans_cig_speed-->
+                <Button Name="tb_DropTrans_cig_speed" Content="70009" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,47,86,3"/>
 
                 <TextBlock  Style="{StaticResource UnitTextStyle}" Margin="0,0,35,0" />
                 <TextBlock  Style="{StaticResource UnitTextStyle}" Margin="0,20,35,0" />
@@ -164,6 +164,9 @@
                 <TextBlock Margin="0,-2,398,0" Style="{StaticResource UnitTextStyle}" />
                 <TextBlock Margin="0,20,398,0" Style="{StaticResource UnitTextStyle}" />
                 <TextBlock Margin="0,43,398,0" Style="{StaticResource UnitTextStyle}" />
-            </Grid>    
+            <TextBlock Margin="0,0,170,2" Text="下降口输送电机速度" VerticalAlignment="Bottom"  HorizontalAlignment="Right"/>
+            <TextBlock Margin="0,42,33,0" Style="{StaticResource UnitTextStyle}" />
+        </Grid>
+          
     </Grid>
 </UserControl>
