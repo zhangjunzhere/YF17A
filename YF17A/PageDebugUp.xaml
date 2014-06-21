@@ -1,0 +1,111 @@
+﻿<Page x:Class="YF17A.PageDebugUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+       xmlns:local="clr-namespace:YF17A"
+       d:DesignHeight="610" d:DesignWidth="942"
+	Title="PageDebug" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Grid >
+        <local:UCWarningLights x:Name="tooltip"     Margin="-560,0,560,0"/>
+        
+        <Border BorderBrush="Silver" BorderThickness="0" Height="610" Width="560" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="370,0,0,0" >
+            
+            <Grid >
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="20" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />                        
+                    </Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Source" Value="/YF17A;component/image/help.png" />
+                        <Setter Property="Stretch" Value="None" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition />                    
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />                    
+                </Grid.RowDefinitions>
+
+                <TextBlock  Text="取样" Grid.Column="2"     Height="32" Margin="32,33,21,36" />
+                <TextBlock  Text="弯道" Grid.Column="3" Margin="32,35,21,39" />
+                <TextBlock  Text="提升" Grid.Column="4" Margin="31,35,21,39" />
+                <TextBlock  Text="传送" Grid.Column="1" Margin="27,36,26,38" />
+
+                <TextBlock  Text="驱动器" Grid.Row="1" HorizontalAlignment="Left" Margin="12,0,0,49" VerticalAlignment="Bottom" />
+                <TextBlock  Text="驱动器" Grid.Row="2" HorizontalAlignment="Left" Margin="12,0,0,46" VerticalAlignment="Bottom" />
+                <TextBlock  Text="初始化" Grid.Row="3" HorizontalAlignment="Left" Margin="12,0,0,45" VerticalAlignment="Bottom" />
+                <TextBlock  Text="驱动器" Grid.Row="4" HorizontalAlignment="Left" Margin="12,22,0,52" />
+                <TextBlock  Text="伺服电机" Grid.Row="5" HorizontalAlignment="Left" Margin="12,0,0,48" VerticalAlignment="Bottom" />
+
+                <!-- Sample_power	Bool	取样伺服主电源	Q06	只读	指示灯/报警条显示	I0.1-->
+                <Image Name="iv_Sample_power" Grid.Row="1"  Grid.Column="2"  />
+                <!--Corner_power	Bool	弯道伺服主电源	Q07	只读	指示灯/报警条显示	I0.2-->
+                <Image  Name="iv_Corner_power"  Grid.Row="1"  Grid.Column="3"  />
+                <!--Lift_power	Bool	提升伺服主电源	Q08	只读	指示灯/报警条显示	I2.0-->
+                <Image  Name="iv_Lift_power"  Grid.Row="1"  Grid.Column="4" />
+                <!--Transfer_power	Bool	传送伺服主电源	Q09	只读	指示灯/报警条显示	I2.7-->
+                <Image  Name="iv_Transfer_power"  Grid.Row="1"  Grid.Column="1"  />
+
+                <!--Sample_servo_fault	Bool	取样伺服控制器故障	A16	只读	指示灯/报警条显示	I0.5 -->
+                <Image Name="iv_Sample_servo_fault" Grid.Row="2"  Grid.Column="2"/>
+                <!--Corner_servo_fault	Bool	弯道伺服控制器故障	A17-1	只读	指示灯/报警条显示	I0.6-->
+                <Image  Name="iv_Corner_servo_fault"  Grid.Row="2"  Grid.Column="3" />
+                <!--Lift_servo_fault	Bool	提升伺服控制器故障	A17-2	只读	指示灯	I4.4-->
+                <Image  Name="iv_Lift_servo_fault"  Grid.Row="2"  Grid.Column="4"  />
+                <!--Transfer_servo_fault	Bool	传送伺服控制器故障	A17-3	只读	指示灯	I4.5-->
+                <Image  Name="iv_Transfer_servo_fault"  Grid.Row="2"  Grid.Column="1" />
+                <!-- sample_servo_initialized	Bool	取样驱动器初始完成		只读	指示灯	M1502.7-->
+                <Image Name="iv_sample_servo_initialized" Grid.Row="3"  Grid.Column="2"/>
+                <!--Corner_servo_initialized	Bool	弯道驱动器初始完成		只读	指示灯	M1602.7  -->
+                <Image  Name="iv_Corner_servo_initialized"  Grid.Row="3"  Grid.Column="3"  />
+                <!--Lift_servo_initialized	Bool	提升驱动器初始完成		只读	指示灯	M1902.7-->
+                <Image  Name="iv_Lift_servo_initialized"  Grid.Row="3"  Grid.Column="4"  />
+                <!--Transfer_servo_initialized	Bool	传送驱动器初始完成		只读	指示灯	M2002.7-->
+                <Image  Name="iv_Transfer_servo_initialized"  Grid.Row="3"  Grid.Column="1"  />
+                <!-- sample_servo_enable	Bool	取样驱动器使能		只读	指示灯	M1502.5-->
+                <Image Name="iv_sample_servo_enable" Grid.Row="4"  Grid.Column="2" />
+                <!--Corner_servo_enable	Bool	弯道驱动器使能		只读	指示灯	M1602.5-->
+                <Image  Name="iv_Corner_servo_enable"  Grid.Row="4"  Grid.Column="3" />
+                <!--Slope_servo_enable	Bool	斜向驱动器使能		只读	指示灯	M1702.5-->
+                <Image  Name="iv_Slope_servo_enable"  Grid.Row="4"  Grid.Column="4" />
+                <!--Transfer_servo_enable	Bool	传送驱动器使能		只读	指示灯	M2002.5-->
+                <Image  Name="iv_Transfer_servo_enable"  Grid.Row="4"  Grid.Column="1" />
+                <!--Sample_speed_rpm	Int	取样电机转速		只读	数值显示	MW1536-->
+                <Button  Name="tb_Sample_speed_rpm"  Content="1001" Grid.Row="5"  Grid.Column="2" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,40,36,40" />
+                <!-- Corner_speed_rpm	Int	弯道电机转速		只读	数值显示	MW1636-->
+                <Button  Name="tb_Corner_speed_rpm"  Content="1002" Grid.Row="5"  Grid.Column="3"  Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,39,38,41" />
+                <!--Lift_speed_rpm	Int	提升电机转速		只读	数值显示	MW1936-->
+                <Button  Name="tb_Lift_speed_rpm"  Content="1003" Grid.Row="5"  Grid.Column="4"  Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,40,37,40" />
+                <!--Transfer_speed_rpm	Int	传送电机转速		只读	数值显示	MW2036-->
+                <Button  Name="tb_Transfer_speed_rpm"  Content="1004" Grid.Row="5"  Grid.Column="1"   Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,41,39,39"  />
+                <TextBlock HorizontalAlignment="Left" Margin="10,46,0,29" Text="主电源" Grid.Row="1" />
+                <TextBlock HorizontalAlignment="Left" Margin="12,49,0,26" Text="准备好" Grid.Row="2" />
+                <TextBlock HorizontalAlignment="Left" Margin="20,49,0,26" Text="完成" Grid.Row="3" />
+                <TextBlock HorizontalAlignment="Left" Margin="28,46,0,29" Text="转速" Grid.Row="5" />
+                <TextBlock HorizontalAlignment="Left" Margin="19,44,0,31" Text="使能" Grid.Row="4" />
+                <TextBlock Height="32" Margin="22,55,11,14" Text="驱动器" Grid.Column="2" />
+                <TextBlock Height="32" Margin="21,55,12,14" Text="驱动器" Grid.Column="3" />
+                <TextBlock Height="32" Margin="20,55,12,14" Text="驱动器" Grid.Column="4" />
+                <TextBlock Height="32" Margin="17,55,16,14" Text="驱动器" Grid.Column="1" />
+                <TextBlock FontSize="16" Text="转/分"  Margin="0,40,0,0" Style="{StaticResource UnitTextStyle}" Grid.Column="1" Grid.Row="5" />
+                <TextBlock FontSize="16" Margin="0,40,0,0" Text="转/分" Style="{StaticResource UnitTextStyle}" Grid.Column="4" Grid.Row="5" />
+                <TextBlock FontSize="16" Margin="0,40,0,0" Text="转/分" Style="{StaticResource UnitTextStyle}" Grid.Column="3" Grid.Row="5" />
+                <TextBlock FontSize="16" Margin="0,40,0,0" Text="转/分" Style="{StaticResource UnitTextStyle}" Grid.Column="2" Grid.Row="5"  />
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

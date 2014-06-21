@@ -1,0 +1,177 @@
+﻿<Page x:Class="YF17A.PageParameterDown"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:YF17A"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="1024"
+      
+	Title="PageParamDown" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+
+    <Grid x:Name="root"   MouseUp="Grid_MouseUp">
+        <local:UCWarningLights  x:Name="tooltip"   />
+
+        <Border BorderBrush="Silver" BorderThickness="2" HorizontalAlignment="Left" Margin="120,520,0,0" Height="70" Name="border1" Width="360" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="5*"/>
+                    <ColumnDefinition Width="4*" />                   
+                </Grid.ColumnDefinitions>
+                <!--Slope_cig_speed	Int	斜向电机烟支速度		只读	数值显示	MW1886 -->
+                <TextBlock    Text="斜向电机烟支速度" Grid.Row="0"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center"  />
+                <Button Name="tb_Slope_cig_speed" Content="1234" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,1,48,1" Grid.Column="1" />
+                <!--Store_cig_speed	Int	存储电机烟支速度		只读	数值显示	MW1884 -->
+                <TextBlock    Text="存储电机烟支速度" Grid.Row="1"  Grid.Column="0" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center"  />
+                <Button Name="tb_Store_cig_speed" Grid.Row="1" Content="1234" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,1,48,1" Grid.Column="1" />
+                <!--Packer_cig_speed	Int	包装机烟支速度		只读	数值显示	MW1310-->
+                <TextBlock    Text="包装机烟支速度" Grid.Row="2"  Grid.Column="0" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center"  />
+                <Button Name="tb_Packer_cig_speed" Grid.Row="2" Content="1234" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,0,49,2" Grid.Column="1" />
+                <TextBlock FontSize="20" Style="{StaticResource UnitTextStyle}" Grid.Column="1"  Margin="56,-1,0,0" Grid.RowSpan="2" />
+                <TextBlock FontSize="20"  Margin="56,21,0,0" Style="{StaticResource UnitTextStyle}"  Grid.Column="1" Grid.RowSpan="3" />
+              
+                <TextBlock FontSize="20" Grid.RowSpan="2" Margin="56,17,0,0" Style="{StaticResource UnitTextStyle}" Grid.Column="1" Grid.Row="1" />
+            </Grid>
+        </Border>
+
+        <Border  BorderBrush="Silver" BorderThickness="1" Height="590"  Width="380" HorizontalAlignment="Right" Margin="0,0,0,0"  Background="#cfd2db">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="7*"/>
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <!--DownPort_hight	Int	下降口反馈高度		只读	数值显示	DB8.DBW26-->
+                <TextBlock    Text="下降口反馈高度" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,2,48,1" />
+                <Image   Name="iv_DownPort_hight"   ToolTip="下降口反馈高度" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,227,2"/>
+                <Button Name="btn_DownPort_hight" Grid.Column="1"   Content="1234" Style="{StaticResource SpeedButtonStyle}" Foreground="Black"  Margin="0,5,53,5" />
+                <!--Downport_CigIn_hight1	Int	下降口存烟高度1		读/写	数值显示	DB8.DBW78-->
+                <TextBlock    Text="下降口存烟高度1" Grid.Row="1" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,48,28" Grid.RowSpan="2" />
+                <Image   Name="iv_Downport_CigIn_hight1"   ToolTip="下降口反馈高度" Grid.Row="1" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,227,1"/>
+                <Button Name="btn_Downport_CigIn_hight1" Grid.Row="1" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Store_CigIn_Comp_speed1	Int	存储高度1补偿速度		读/写	数值显示	DB8.DBW52-->
+                <TextBlock    Text="存储高度1补偿速度" Grid.Row="2" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Store_CigIn_Comp_speed1"   ToolTip="下降口反馈高度" Grid.Row="2" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Store_CigIn_Comp_speed1" Grid.Row="2" Grid.Column="1"   Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Downport_CigIn_hight2	Int	下降口存烟高度2		读/写	数值显示	DB8.DBW56-->
+                <TextBlock    Text="下降口存烟高度2" Grid.Row="3" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Downport_CigIn_hight2"   ToolTip="下降口反馈高度" Grid.Row="3" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Downport_CigIn_hight2"  Grid.Row="3" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Store_CigIn_Comp_speed2	Int	存储高度2补偿速度		读/写	数值显示	DB8.DBW54-->
+                <TextBlock    Text="存储高度2补偿速度" Grid.Row="4" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Store_CigIn_Comp_speed2"   ToolTip="下降口反馈高度" Grid.Row="4" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Store_CigIn_Comp_speed2"  Grid.Row="4" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Downport_CigIn_lowest_hight	Int	存烟最低工作高度		读/写	数值显示	DB8.DBW92-->
+                <TextBlock    Text="存烟最低工作高度" Grid.Row="5" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Downport_CigIn_lowest_hight"   ToolTip="下降口反馈高度" Grid.Row="5" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,3"/>
+                <Button Name="btn_Downport_CigIn_lowest_hight"  Grid.Row="5" Grid.Column="1" Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Downport_CigOut_hight1	Int	下降口排烟高度1		读/写	数值显示	DB8.DBW80-->
+                <TextBlock    Text="下降口排烟高度1" Grid.Row="6" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Downport_CigOut_hight1"   ToolTip="下降口反馈高度" Grid.Row="6" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,226,2"/>
+                <Button Name="btn_Downport_CigOut_hight1"   Grid.Row="6" Grid.Column="1" Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Store_CigOut_Comp_speed1	Int	排烟高度1补偿速度		读/写	数值显示	DB8.DBW84-->
+                <TextBlock    Text="排烟高度1补偿速度" Grid.Row="7" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Store_CigOut_Comp_speed1"   ToolTip="下降口反馈高度" Grid.Row="7" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Store_CigOut_Comp_speed1"   Grid.Row="7" Grid.Column="1" Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Downport_CigOut_hight2	Int	下降口排烟高度2		读/写	数值显示	DB8.DBW82-->
+                <TextBlock    Text="下降口排烟高度2" Grid.Row="8" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Downport_CigOut_hight2"   ToolTip="下降口反馈高度" Grid.Row="8" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Downport_CigOut_hight2"  Grid.Row="8" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Store_CigOut_Comp_speed2	Int	排烟高度2补偿速度		读/写	数值显示	DB8.DBW86-->
+                <TextBlock    Text="排烟高度2补偿速度" Grid.Row="9" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Store_CigOut_Comp_speed2"   ToolTip="下降口反馈高度" Grid.Row="9" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+
+                <Button Name="btn_Store_CigOut_Comp_speed2" Grid.Row="9" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Downport_comp_output	Int	下降口控制补偿输出		只读	数值显示	MW1250-->
+                <TextBlock    Text="下降口控制补偿输出" Grid.Row="10" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Downport_comp_output"   ToolTip="下降口反馈高度" Grid.Row="10" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,3"/>
+                <Button Name="btn_Downport_comp_output"  Grid.Row="10" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" Foreground="Black"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Downport_Highest_limit	Int	下降口传感器上限		读/写	数值显示	DB8.DBW88-->
+                <TextBlock    Text="下降口传感器上限" Grid.Row="11" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Downport_Highest_limit"   ToolTip="下降口反馈高度" Grid.Row="11" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,226,2"/>
+
+                <Button Name="btn_Downport_Highest_limit" Grid.Row="11" Grid.Column="1"   Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Downport_Lowest_limit	Int	下降口传感器下限		读/写	数值显示	DB8.DBW90-->
+                <TextBlock    Text="下降口传感器下限" Grid.Row="12" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Downport_Lowest_limit"   ToolTip="下降口反馈高度" Grid.Row="12" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+
+                <Button Name="btn_Downport_Lowest_limit"  Grid.Row="12" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Downport_sensor_output	Int	下降口传感器输出		只读	数值显示	MW182-->
+                <TextBlock    Text="下降口传感器输出" Grid.Row="13" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Downport_sensor_output"   ToolTip="下降口反馈高度" Grid.Row="13" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Downport_sensor_output"  Grid.Row="13" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Store_manual_speed	Int	存储电机手动速度		读/写	数值显示	MW260-->
+                <TextBlock    Text="存储电机手动速度" Grid.Row="14" FontSize="20"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Store_manual_speed"   ToolTip="下降口反馈高度" Grid.Row="14" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Store_manual_speed" Grid.Row="14" Grid.Column="1"   Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Store_empty_position	Int	存储空位置		读/写	数值显示	DB8.DBW64-->
+                <TextBlock    Text="存储空位置" Grid.Row="15" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Store_empty_position"   ToolTip="下降口反馈高度" Grid.Row="15" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,3"/>
+                <Button Name="btn_Store_empty_position"  Grid.Row="15" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Store_full_position	Int	存储满位置		读/写	数值显示	DB8.DBW66-->
+                <TextBlock    Text="存储满位置" Grid.Row="16" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Store_full_position"   ToolTip="下降口反馈高度" Grid.Row="16" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,226,2"/>
+                <Button Name="btn_Store_full_position" Grid.Row="16" Grid.Column="1"   Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Maker_stop_position	Int	卷烟机停止位置		读/写	数值显示	DB8.DBW72-->
+                <TextBlock    Text="卷烟机停止位置" Grid.Row="17" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Maker_stop_position"   ToolTip="下降口反馈高度" Grid.Row="17" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Maker_stop_position"  Grid.Row="17" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--Packer_enable_position	Int	包装机可启动位置		读/写	数值显示	DB8.DBW70-->
+                <TextBlock    Text="包装机可启动位置" Grid.Row="18" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Packer_enable_position"   ToolTip="下降口反馈高度" Grid.Row="18" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Packer_enable_position" Grid.Row="18"  Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <!--	Packer_LowSpeed_position	Int	包装机低速位置		读/写	数值显示	DB8.DBW68-->
+                <TextBlock    Text="包装机低速位置" Grid.Row="19" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,3,48,3" />
+                <Image   Name="iv_Packer_LowSpeed_position"   ToolTip="下降口反馈高度" Grid.Row="19" Source="/YF17A;component/image/help.png" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,226,2"/>
+                <Button Name="btn_Packer_LowSpeed_position"  Grid.Row="19" Grid.Column="1"  Content="1234" Style="{StaticResource SpeedButtonStyle}" IsEnabled="True"  Click="btn_Setting_Click" Margin="0,5,53,5" />
+                <TextBlock Style="{StaticResource UnitTextStyle}" Grid.Column="1" Text="%" Margin="0,2,34,0" />
+                <TextBlock Margin="53,1,0,0" Style="{StaticResource UnitTextStyle}" Grid.Column="1" Grid.Row="4" />
+                <TextBlock Margin="53,2,0,0" Style="{StaticResource UnitTextStyle}" Grid.Column="1" Grid.Row="2" />
+                <TextBlock Margin="0,2,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" Grid.Row="1" />
+                <TextBlock Margin="0,2,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" Grid.Row="3" />
+                <TextBlock Margin="0,2,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" Grid.Row="5" />
+                <TextBlock Margin="0,1,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" Grid.Row="6" />
+                <TextBlock Margin="0,5,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" Grid.Row="8" Grid.RowSpan="2" />
+                <TextBlock Margin="0,28,23,0" Style="{StaticResource UnitTextStyle}" Text="mv" Grid.Column="1" Grid.Row="10" Grid.RowSpan="2" />
+                <TextBlock Margin="0,29,23,0" Style="{StaticResource UnitTextStyle}" Text="mv" Grid.Column="1" Grid.Row="11" Grid.RowSpan="2" />
+                <TextBlock Margin="0,1,23,0" Style="{StaticResource UnitTextStyle}" Text="mv" Grid.Column="1" Grid.Row="13" />
+                <TextBlock Margin="0,5,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" Grid.Row="19" />
+                <TextBlock Grid.Row="15" Margin="0,0,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" />
+                <TextBlock Grid.Row="16" Margin="0,1,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" />
+                <TextBlock Grid.Row="17" Margin="0,1,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" />
+                <TextBlock Grid.Row="18" Margin="0,4,34,0" Style="{StaticResource UnitTextStyle}" Text="%" Grid.Column="1" Grid.RowSpan="2" />
+                <TextBlock Margin="0,2,5,0" Style="{StaticResource UnitTextStyle}" Grid.Column="1" Grid.Row="14" HorizontalAlignment="Right" />
+                <TextBlock HorizontalAlignment="Right" Margin="0,2,5,0" Style="{StaticResource UnitTextStyle}" Grid.Column="1" Grid.Row="10" />
+                <TextBlock HorizontalAlignment="Right" Margin="0,2,4,0" Style="{StaticResource UnitTextStyle}" Grid.Column="1" Grid.Row="7" />
+                <TextBlock HorizontalAlignment="Right" Margin="0,2,6,0" Style="{StaticResource UnitTextStyle}" Grid.Column="1" Grid.Row="9" />
+            </Grid>
+        </Border>
+        <local:KeyboardControl Visibility="Hidden" x:Name="keyboard" />  
+    </Grid>
+</Page>

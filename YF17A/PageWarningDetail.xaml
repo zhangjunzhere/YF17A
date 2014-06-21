@@ -1,0 +1,20 @@
+﻿<Page x:Class="YF17A.PageWarningDetail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="590" d:DesignWidth="942"
+	Title="PageWarningDetail">
+
+    <Grid>
+        <Image  HorizontalAlignment="Left" VerticalAlignment="Top"  Name="image1" Stretch="Uniform" Source="/YF17A;component/image/error_default.png" />
+        <TextBlock Text="故障代码" FontSize="40" Margin="439,75,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock  Name="tb_code" Text="code" FontSize="32" Margin="628,86,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="解决办法" FontSize="40" Margin="431,199,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock  Name="tb_solution" Text="solutionsolutionsolutionsolutionsolutionsolutionsolutionsolutionsolutionsolution" FontSize="32" Margin="628,207,0,0" TextWrapping="Wrap"   Width="300"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <Button Visibility="Hidden" Name ="btn_add" Content="add alarm" FontSize="40" Margin="421,428,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btn_add_Click" />
+        <Button  Visibility="Hidden"  Name ="btn_delete" Content="delete alarm" FontSize="40" HorizontalAlignment="Left" Margin="421,493,0,0" VerticalAlignment="Top" Click="btn_delete_Click" />
+    </Grid>
+</Page>

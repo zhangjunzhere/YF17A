@@ -1,0 +1,35 @@
+﻿<Page x:Class="YF17A.PagePopup"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+     
+	Title="PagePopup">
+
+    <Canvas x:Name="MainPanel">
+        <Grid>
+            <Label Height="28" Margin="0,68,0,0" Width="360" Name="labelString" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="DarkBlue">Click the above button</Label>
+            <Button Content="Show Modal Dialog" Height="28" HorizontalAlignment="Center" Margin="10,10,231,0" Name="button1" VerticalAlignment="Top" Click="button1_Click" />
+        </Grid>
+
+        <Popup Name="ModalDialog" StaysOpen="True" Placement="Center" LostFocus="ModalDialog_LostFocus">
+            <Border BorderThickness="2" BorderBrush="SteelBlue" Width="400" Height="130">
+                <Grid Background="White">
+                    <DockPanel Height="28" VerticalAlignment="Top" Background="SteelBlue">
+                        <TextBox Height="26" Name="TxtBoxTitle" Width="120" Background="SteelBlue" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="16" Focusable="False" IsHitTestVisible="False" IsTabStop="False" VerticalContentAlignment="Center">WPF Modal Dialog</TextBox>
+                        <Button Height="26" Name="BtnClose" Width="26" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Background="SteelBlue" Click="Dlg_BtnClose_Click">X</Button>
+                    </DockPanel>
+
+                    <Grid Margin="0,30,0,0">
+                        <Label Margin="15,0,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" >Input a string:</Label>
+                        <TextBox Height="28" Name="TxtBoxInput" Width="360" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Button Margin="0,60,100,0" Height="22" Width="68" HorizontalAlignment="Right" Click="Dlg_BtnOK_Click">OK</Button>
+                        <Button Margin="0,60,15,0" Height="22" Width="68" HorizontalAlignment="Right" Click="Dlg_BtnClose_Click">Cancel</Button>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Popup>
+        <Button Height="28" Name="BtnShowDlg" Click="BtnShowDlg_Click" Canvas.Left="100" Canvas.Top="89">Show Modal Dialog</Button>
+    </Canvas>
+</Page>

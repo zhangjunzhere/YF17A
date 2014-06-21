@@ -1,0 +1,77 @@
+﻿<Page x:Class="YF17A.PageDebugBucket"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      xmlns:local="clr-namespace:YF17A"
+       d:DesignHeight="610" d:DesignWidth="942"
+	Title="PageDebug" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+
+    <Grid Name="rootPanel">
+        <!--<Image    Name="bg"    Source="/YF17A;component/image/home_bg.png"  Stretch="Fill"   />-->
+        <local:UCWarningLights  x:Name="tooltip"   />
+
+        <!-- 手动校零地址：M1000.0 Store_set_zero -->
+        <local:UCSwitch ToolTip="手动校零" x:Name="btn_Store_set_zero"  Margin="50,0,0,150" HorizontalAlignment="Left" VerticalAlignment="Bottom"  />
+
+       <Border BorderBrush="Silver" BorderThickness="2" Height="530" Name="border2" Width="380" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,0,0" >
+            <Grid  Background="#cfd2db">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                           
+                <TextBlock  Text="斜向驱动器" Grid.Row="0"  Grid.Column="1"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="存储驱动器" Grid.Row="0"  Grid.Column="2"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                <TextBlock  Text="驱动器主电源" Grid.Row="1"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBlock  Text="驱动器准备好" Grid.Row="2"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBlock  Text="初始化完成" Grid.Row="3"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBlock  Text="驱动器使能" Grid.Row="4"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBlock  Text="伺服电机转速" Grid.Row="5"  Grid.Column="0"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                <!--驱动器主电源	I0.3   指示灯	I0.4  指示灯-->
+                <!-- Slope_power	Bool	斜向伺服主电源	Q10	只读	指示灯/报警条显示	I0.3-->
+                <Image Name="iv_Slope_power" Grid.Row="1"  Grid.Column="1"  Source="/YF17A;component/image/help.png" Stretch="None"/>
+                <!--Store_power	Bool	存储伺服主电源	Q11	只读	指示灯/报警条显示	I0.4-->
+                <Image  Name="iv_Store_power"  Grid.Row="1"  Grid.Column="2"  Source="/YF17A;component/image/help.png" Stretch="None"/>
+                       
+                <!--驱动器准备好	I0.7  指示灯	I1.0  指示灯-->     
+                <!-- Slope_servo_fault	Bool	斜向伺服控制器故障	A18	只读	指示灯/报警条显示	I0.7-->
+                <Image Name="iv_Slope_servo_fault" Grid.Row="2"  Grid.Column="1"   Source="/YF17A;component/image/help.png" Stretch="None"/>
+                <!--Store_servo_fault	Bool	存储伺服控制器故障	A19	只读	指示灯/报警条显示	I1.0-->
+                <Image Name="iv_Store_servo_fault"  Grid.Row="2"  Grid.Column="2"  Source="/YF17A;component/image/help.png"    Stretch="None"/>
+                
+                <!--初始化完成	M1702.7 指示灯	M1702.7 指示灯-->
+                <!--Slope_servo_initialized	Bool	斜向驱动器初始完成		只读	指示灯	M1702.7-->
+                <Image Name="iv_Slope_servo_initialized"  Grid.Row="3"  Grid.Column="1"   Source="/YF17A;component/image/help.png" Stretch="None"/>
+                <Image   Grid.Row="3"  Grid.Column="2"    Source="{Binding Source,ElementName=iv_Slope_servo_initialized}" Stretch="None"/>
+                
+                <!--驱动器使能	M1702.5 指示灯	M1802.5 指示灯-->
+                <!--Slope_servo_enable	Bool	斜向驱动器使能		只读	指示灯	M1702.5-->
+                <Image Name="iv_Slope_servo_enable"  Grid.Row="4"  Grid.Column="1"   Source="/YF17A;component/image/help.png"  Stretch="None" />
+                <!--Store_servo_enable	Bool	存储驱动器使能		只读	指示灯	M1802.5-->
+                <Image Name="iv_Store_servo_enable"  Grid.Row="4"  Grid.Column="2"  Source="/YF17A;component/image/help.png" Stretch="None" />
+                
+                <!--伺服电机转速	MW1736  数值显示	MW1738  数值显示-->
+                <!--Slope_speed_rpm	Int	斜向电机转速		只读	数值显示	MW1736-->
+                <Button  Name="tb_Slope_speed_rpm"  Content="1001" Grid.Row="5"  Grid.Column="1"  Foreground="Black" Style="{StaticResource SpeedButtonStyle}" Margin="0,30,56,28" />
+                <!--Store_speed_rpm	Int	存储电机转速		只读	数值显示	MW1738-->
+                <Button  Name="tb_Store_speed_rpm"  Content="1002" Grid.Row="5"  Grid.Column="2" Foreground="Black" Style="{StaticResource SpeedButtonStyle}" Margin="0,31,51,26" />
+                <TextBlock Text="转/分" Style="{StaticResource UnitTextStyle}" Margin="0,32,3,0"   Grid.Column="1" Grid.Row="5" />
+                <TextBlock Text="转/分" Margin="0,32,0,0" Style="{StaticResource UnitTextStyle}" Grid.Column="2" Grid.Row="5" />
+            </Grid>
+        </Border>
+       
+    </Grid>
+</Page>

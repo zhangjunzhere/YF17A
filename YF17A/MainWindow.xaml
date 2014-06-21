@@ -1,0 +1,31 @@
+﻿<Window x:Class="YF17A.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:YF17A"           
+       WindowState="Maximized"
+       WindowStyle="None"  
+      
+        Title="MainWindow" Height="768" Width="1024"  Loaded="Window_Loaded" Closed="Window_Closed">
+    <!--WindowState="Maximized"
+    WindowStyle="None" -->
+    <Grid PreviewMouseUp="Grid_PreviewMouseUp"  Background="#cfd2db">
+       
+        <StackPanel x:Name="rootPanel" Orientation="Vertical" >
+            <Frame  Name="warnningListPanel" Source="PageWarnningHeader.xaml" Grid.Column="0"  NavigationUIVisibility="Hidden"  Height="66"/>
+            <Frame  Name="statusPanel" Source="PageStatus.xaml"   NavigationUIVisibility="Hidden"  Height="30" Background="#eeeeee"/>
+            <Grid x:Name="mainPanel" Height="610" >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="82" />
+                </Grid.ColumnDefinitions>
+
+                <Frame  Name="reportPanel" Source="PageHome.xaml" Grid.Column="0"  NavigationUIVisibility="Hidden"  />
+                <Frame Name="loginPanel"  Source="PageLogin.xaml" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+
+            </Grid>
+            <Frame Name="toolbarPanel"   Height="60" Source="ToolbarMain.xaml" Grid.Column="1"  NavigationUIVisibility="Hidden"/>
+        </StackPanel>
+        <local:MenuControl Visibility="Collapsed"  x:Name="menu" />
+        <Frame  Name="cleanScreenPanel" Source="PageCleanScreen.xaml"  NavigationUIVisibility="Hidden"  />
+    </Grid>
+</Window>

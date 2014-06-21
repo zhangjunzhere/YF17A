@@ -1,0 +1,25 @@
+﻿<Page x:Class="YF17A.PageDocument"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="559" d:DesignWidth="962"
+	Title="PageDocument">
+
+    <!--<Grid Loaded="PageLoaded" Unloaded="PageUnloaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*"  />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Visibility="Collapsed">
+            <Button Content="电器原理图" Margin="40,0,0,0" Click="Btn_ElectricGraph_Click" />
+            <Button Content="操作手册"  Margin="40,0,0,0" Click="Btn_Manual_Click" />
+        </StackPanel>
+        <Grid x:Name="Stage" Grid.Row="1"/>
+    </Grid>-->
+
+    <Grid x:Name="Stage" Loaded="PageLoaded" Unloaded="PageUnloaded">
+     
+    </Grid>
+</Page>

@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="menu_document">menu_document</system:String>
+    
+    <BitmapImage x:Key="sRedLight" UriSource="/image/debug_light_red.png" />
+    <BitmapImage x:Key="sGreenLight" UriSource="/image/debug_light_green.png" />
+    <BitmapImage x:Key="sEnableLight" UriSource="/image/debug_light_enable.png" />
+    <BitmapImage x:Key="sDisableLight" UriSource="/image/debug_light_disable.png" />
+    <BitmapImage x:Key="sSwitchOn" UriSource="/image/SwitchOn.png" />
+    <BitmapImage x:Key="sSwitchOff" UriSource="/image/SwitchOff.png" />
+
+   
+        <Style  TargetType="Button" x:Key="SpeedButtonStyle">
+        <Setter Property="Background" Value="#cbebfc" />
+        <Setter Property="Padding" Value="0,-5,0,-5" />
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="IsEnabled" Value="False"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="MinWidth" Value="40"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style  TargetType="TextBlock" x:Key="DescriptionTextStyle">       
+        <Setter Property="FontSize" Value="20" />        
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+    
+    <Style  TargetType="TextBlock" x:Key="UnitTextStyle">
+        <Setter Property="Foreground" Value="#440000" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Text" Value="支/分" />
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <!--<Style  TargetType="Image">
+        <Setter Property="Source" Value="/YF17A;component/image/help.png" />
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Stretch" Value="None"/>
+    </Style>-->
+
+    <!--<Style  TargetType="Grid">
+        <Setter Property="Background" Value="#cfd2db" />      
+    </Style>-->
+   
+
+</ResourceDictionary>

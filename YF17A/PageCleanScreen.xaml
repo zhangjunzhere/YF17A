@@ -1,0 +1,19 @@
+﻿<Page x:Class="YF17A.PageCleanScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+	Title="PageCleanScreen">
+
+    <Grid Background="#80a3a9b0" Loaded="Grid_Loaded" Unloaded="Grid_Unloaded" >
+        <Image x:Name="anim_cleanscreen" Source="image/CleanScreen.png" Stretch="None"  />
+        <Button  HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="20" Click="Button_Click" >
+            <StackPanel Orientation="Vertical">
+                <Image Source="image/exit.bmp" Stretch="None"  VerticalAlignment="Top" />
+                <TextBlock Text="清洁完毕！"   HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>

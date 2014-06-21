@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40F55A79-8704-49FB-8AAB-FE3122950702}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YF17A</RootNamespace>
+    <AssemblyName>YF17A</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\jz\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>061A5EB56CD595A0759585358EF0085C5F592E17</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>YF17A_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\AxInterop.AcroPDFLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Lib\Interop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TwinCAT.Ads, Version=1.0.0.18, Culture=neutral, PublicKeyToken=180016cd49e5e8c3">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\TwinCAT.Ads.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AccessDatabase\Category.cs" />
+    <Compile Include="AccessDatabase\Parameter.cs" />
+    <Compile Include="AccessDatabase\Warnning.cs" />
+    <Compile Include="AccessDatabase\Log.cs" />
+    <Compile Include="BeckHoff.cs" />
+    <Compile Include="PageParameterHelper.cs" />
+    <Compile Include="PageUserActionResult.xaml.cs">
+      <DependentUpon>PageUserActionResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUserRegister.xaml.cs">
+      <DependentUpon>PageUserRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUserPassword.xaml.cs">
+      <DependentUpon>PageUserPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUserManager.xaml.cs">
+      <DependentUpon>PageUserManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageCleanScreen.xaml.cs">
+      <DependentUpon>PageCleanScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageParameterBackup.xaml.cs">
+      <DependentUpon>PageParameterBackup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageRuntimeLog.xaml.cs">
+      <DependentUpon>PageRuntimeLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageStatus.xaml.cs">
+      <DependentUpon>PageStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageTest.xaml.cs">
+      <DependentUpon>PageTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageWarningRecord.xaml.cs">
+      <DependentUpon>PageWarningRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageDebugBucket.xaml.cs">
+      <DependentUpon>PageDebugBucket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageDebugConsole.xaml.cs">
+      <DependentUpon>PageDebugConsole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageDebugUp.xaml.cs">
+      <DependentUpon>PageDebugUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageDebugMain.xaml.cs">
+      <DependentUpon>PageDebugMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUser.xaml.cs">
+      <DependentUpon>PageUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageWarnningHeader.xaml.cs">
+      <DependentUpon>PageWarnningHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TooltipControl.xaml.cs">
+      <DependentUpon>TooltipControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuControl.xaml.cs">
+      <DependentUpon>MenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KeyboardControl.xaml.cs">
+      <DependentUpon>KeyboardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageHome.xaml.cs">
+      <DependentUpon>PageHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageParameterDown.xaml.cs">
+      <DependentUpon>PageParameterDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageParameterUp.xaml.cs">
+      <DependentUpon>PageParameterUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IProtocal.cs" />
+    <Compile Include="PagePopup.xaml.cs">
+      <DependentUpon>PagePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolbarParameter.xaml.cs">
+      <DependentUpon>ToolbarParameter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolbarMain.xaml.cs">
+      <DependentUpon>ToolbarMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTipHelper.cs" />
+    <Compile Include="UCSwitch.xaml.cs">
+      <DependentUpon>UCSwitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCWarningLights.xaml.cs">
+      <DependentUpon>UCWarningLights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="WarnningDataSource.cs" />
+    <Compile Include="Win32Helper.cs" />
+    <Page Include="ControlNames.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUserActionResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageUserRegister.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageUserPassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageUserManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageCleanScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageParameterBackup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageRuntimeLog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageWarningRecord.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageDebugBucket.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageDebugConsole.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageDebugUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageDebugMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageWarnningHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TooltipControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MenuControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KeyboardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageHome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AccessDatabase\AccessTables.cs" />
+    <Compile Include="AccessDatabase\User.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccessDatabase\ContentProvider.cs" />
+    <Compile Include="ImageButton.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PageDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageParameterMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageWarningDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageParameterDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageParameterUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolbarParameter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolbarMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCWarningLights.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PageDocument.xaml.cs">
+      <DependentUpon>PageDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageLogin.xaml.cs">
+      <DependentUpon>PageLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageParameterMain.xaml.cs">
+      <DependentUpon>PageParameterMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageWarningDetail.xaml.cs">
+      <DependentUpon>PageWarningDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="YF17A_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Alarms.bmp" />
+    <Resource Include="image\Base.bmp" />
+    <Resource Include="image\BrakeMaintenance.bmp" />
+    <Resource Include="image\Cleaning.bmp" />
+    <Resource Include="image\CleanScreen.png" />
+    <Resource Include="image\debug_light_disable.png" />
+    <Resource Include="image\debug_light_enable.png" />
+    <Resource Include="image\debug_light_green.png" />
+    <Resource Include="image\debug_light_help.png" />
+    <Resource Include="image\debug_light_red.png" />
+    <Resource Include="image\debug_light_yellow.png" />
+    <Resource Include="image\document.png" />
+    <Resource Include="image\error_default.png" />
+    <Resource Include="image\Exit.bmp" />
+    <Resource Include="image\ExitHmi.bmp" />
+    <Resource Include="image\ExitWindows.bmp" />
+    <Resource Include="image\fl_2.png" />
+    <Resource Include="image\fl_3.png" />
+    <Resource Include="image\fl_4.png" />
+    <Resource Include="image\fl_5.png" />
+    <Resource Include="image\fl_6.png" />
+    <Resource Include="image\fl_7.png" />
+    <Resource Include="image\fl_8.png" />
+    <Resource Include="image\fl_9.png" />
+    <Resource Include="image\fl_help.png" />
+    <Resource Include="image\help.png" />
+    <Resource Include="image\home_bg.png" />
+    <Resource Include="image\keyboard.png" />
+    <Resource Include="image\LanguageSwitch.bmp" />
+    <Resource Include="image\Led_Position.bmp" />
+    <Resource Include="image\light_red.png" />
+    <Resource Include="image\light_yellow.png" />
+    <Resource Include="image\login.png" />
+    <Resource Include="image\logo1.bmp" />
+    <Resource Include="image\manual.bmp" />
+    <Resource Include="image\parampageup_bg.png" />
+    <Resource Include="image\return_caller.bmp" />
+    <Resource Include="image\return_home.bmp" />
+    <Resource Include="image\SettingsHMI.bmp" />
+    <Resource Include="image\status_logo.png" />
+    <Resource Include="image\user_bg.png" />
+    <Resource Include="image\keyboard2.png" />
+    <Resource Include="image\SwitchOff.png" />
+    <Resource Include="image\SwitchOn.png" />
+    <Resource Include="image\animation\donghua10001.png" />
+    <Resource Include="image\animation\donghua10002.png" />
+    <Resource Include="image\animation\donghua10003.png" />
+    <Resource Include="image\animation\donghua10004.png" />
+    <Resource Include="image\animation\donghua10005.png" />
+    <Resource Include="image\animation\donghua10006.png" />
+    <Resource Include="image\animation\donghua10007.png" />
+    <Resource Include="image\animation\donghua20001.png" />
+    <Resource Include="image\animation\donghua20002.png" />
+    <Resource Include="image\animation\donghua20003.png" />
+    <Resource Include="image\animation\donghua20004.png" />
+    <Resource Include="image\animation\donghua20005.png" />
+    <Resource Include="image\animation\donghua20006.png" />
+    <Resource Include="image\animation\donghua20007.png" />
+    <Resource Include="image\animation\donghua30001.png" />
+    <Resource Include="image\animation\donghua30002.png" />
+    <Resource Include="image\animation\donghua30003.png" />
+    <Resource Include="image\animation\donghua30004.png" />
+    <Resource Include="image\animation\donghua30005.png" />
+    <Resource Include="image\animation\donghua30006.png" />
+    <Resource Include="image\animation\donghua30007.png" />
+    <Resource Include="image\animation\donghua40001.png" />
+    <Resource Include="image\animation\donghua40002.png" />
+    <Resource Include="image\animation\donghua40003.png" />
+    <Resource Include="image\animation\donghua40004.png" />
+    <Resource Include="image\animation\donghua40005.png" />
+    <Resource Include="image\animation\donghua40006.png" />
+    <Resource Include="image\animation\donghua40007.png" />
+    <Resource Include="image\animation\donghua50001.png" />
+    <Resource Include="image\animation\donghua50002.png" />
+    <Resource Include="image\animation\donghua50003.png" />
+    <Resource Include="image\animation\donghua50004.png" />
+    <Resource Include="image\animation\donghua50005.png" />
+    <Resource Include="image\animation\donghua50006.png" />
+    <Resource Include="image\animation\donghua50007.png" />
+    <Resource Include="image\animation\donghua60001.png" />
+    <Resource Include="image\animation\donghua60002.png" />
+    <Resource Include="image\animation\donghua60003.png" />
+    <Resource Include="image\animation\donghua60004.png" />
+    <Resource Include="image\animation\donghua60005.png" />
+    <Resource Include="image\animation\donghua60006.png" />
+    <Resource Include="image\animation\donghua60007.png" />
+    <Resource Include="image\animation\donghua70001.png" />
+    <Resource Include="image\animation\donghua70002.png" />
+    <Resource Include="image\animation\donghua70003.png" />
+    <Resource Include="image\animation\donghua70004.png" />
+    <Resource Include="image\animation\donghua70005.png" />
+    <Resource Include="image\animation\donghua70006.png" />
+    <Resource Include="image\animation\donghua70007.png" />
+    <Resource Include="image\animation\donghua70008.png" />
+    <Resource Include="image\animation\donghua70009.png" />
+    <Resource Include="image\animation\donghua70010.png" />
+    <Resource Include="image\animation\donghua70011.png" />
+    <Resource Include="image\animation\donghua70012.png" />
+    <Resource Include="image\animation\donghua70013.png" />
+    <Resource Include="image\animation\donghua70014.png" />
+    <Resource Include="image\animation\donghua70015.png" />
+    <Resource Include="image\animation\donghua70016.png" />
+    <Resource Include="image\animation\donghua70017.png" />
+    <Resource Include="image\animation\donghua70018.png" />
+    <Resource Include="image\animation\donghua70019.png" />
+    <Resource Include="image\animation\donghua70020.png" />
+    <Resource Include="image\animation\donghua70021.png" />
+    <Resource Include="image\animation\donghua70022.png" />
+    <Resource Include="image\animation\donghua70023.png" />
+    <Resource Include="image\animation\donghua70024.png" />
+    <Resource Include="image\animation\donghua70025.png" />
+    <Resource Include="image\animation\donghua70026.png" />
+    <Resource Include="image\animation\donghua70027.png" />
+    <Resource Include="image\animation\donghua70028.png" />
+    <Resource Include="image\animation\donghua70029.png" />
+    <Resource Include="image\animation\donghua70030.png" />
+    <Resource Include="image\animation\donghua70031.png" />
+    <Resource Include="image\animation\donghua70032.png" />
+    <Resource Include="image\animation\donghua70033.png" />
+    <Resource Include="image\animation\donghua70034.png" />
+    <Resource Include="image\animation\donghua70035.png" />
+    <Resource Include="image\animation\donghua70036.png" />
+    <Resource Include="image\animation\donghua70037.png" />
+    <Resource Include="image\animation\donghua70038.png" />
+    <Resource Include="image\animation\donghua70039.png" />
+    <Resource Include="image\animation\donghua70040.png" />
+    <Resource Include="image\animation\donghua70041.png" />
+    <Resource Include="image\animation\donghua70042.png" />
+    <Resource Include="image\animation\donghua70043.png" />
+    <Resource Include="image\animation\donghua70044.png" />
+    <Resource Include="image\animation\donghua70045.png" />
+    <Resource Include="image\animation\donghua70046.png" />
+    <Resource Include="image\animation\donghua70047.png" />
+    <Resource Include="image\animation\donghua70048.png" />
+    <Resource Include="image\animation\donghua70049.png" />
+    <Resource Include="image\animation\donghua70050.png" />
+    <Resource Include="image\animation\donghua70051.png" />
+    <Resource Include="image\animation\donghua70052.png" />
+    <Resource Include="image\animation\donghua70053.png" />
+    <Resource Include="image\animation\donghua70054.png" />
+    <Resource Include="image\animation\donghua70055.png" />
+    <Resource Include="image\animation\donghua70056.png" />
+    <Resource Include="image\animation\donghua70057.png" />
+    <Resource Include="image\animation\donghua70058.png" />
+    <Resource Include="image\animation\donghua80001.png" />
+    <Resource Include="image\animation\donghua80002.png" />
+    <Resource Include="image\animation\donghua80003.png" />
+    <Resource Include="image\animation\donghua80004.png" />
+    <Resource Include="image\animation\donghua80005.png" />
+    <Resource Include="image\animation\donghua80006.png" />
+    <Resource Include="image\animation\donghua80007.png" />
+    <Resource Include="image\mask_bucket.png" />
+    <Resource Include="image\mask_gaojia.png" />
+    <Resource Include="image\bg_button.png" />
+    <Resource Include="image\animation\donghua90001.png" />
+    <Resource Include="image\animation\donghua90002.png" />
+    <Resource Include="image\animation\donghua90003.png" />
+    <Resource Include="image\animation\donghua90004.png" />
+    <Resource Include="image\animation\donghua90005.png" />
+    <Resource Include="image\animation\donghua90006.png" />
+    <Content Include="Lib\AxInterop.AcroPDFLib.dll" />
+    <Content Include="Lib\Interop.AcroPDFLib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="PDFPreviewHandlerHostLib">
+      <Guid>{2294CDCA-30F6-4323-87B3-92EB0DFD9E13}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

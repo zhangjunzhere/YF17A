@@ -1,0 +1,35 @@
+﻿<Page x:Class="YF17A.PageHome"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:YF17A" 
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="942"
+	Title="PageHelp">
+
+    <Grid Name="rootPanel" Loaded="Canvas_Loaded" Unloaded="Canvas_Unloaded">
+        
+        <local:UCWarningLights  x:Name="tooltip"   />
+
+        <Border  HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="530,250,0,0" Width="180" Height="60" CornerRadius="5" BorderThickness="2" BorderBrush="Silver">
+            <Grid>
+                <!--Store_CigNum	Int	存储烟支数		只读	数值显示	MW1880-->
+                <TextBlock Text="存储烟支数"   Style="{StaticResource DescriptionTextStyle}" />
+                <Button Content="{Binding Store_CigNum}"  Name="tb_Store_CigNum" Style="{StaticResource SpeedButtonStyle}"  Foreground="Black" Margin="102,3,0,33"/>
+                <!--Store_percent	Int	存储位置百分比		只读	数值显示	DB8.DBW50-->
+                <TextBlock Text="存储百分比"  Style="{StaticResource DescriptionTextStyle}" Margin="0,30,0,0"/>
+                <Button Content="{Binding Store_percent}"  Name="tb_Store_percent" Style="{StaticResource SpeedButtonStyle}" Foreground="Black" Margin="0,33,20,3" />
+                <TextBlock Text="%"   Style="{StaticResource UnitTextStyle}" Margin="0,29,0,0" />
+            </Grid>
+        </Border>
+
+        <!--手动排空：M2603.7 Elevater_man_paikong-->
+        <local:UCSwitch x:Name="btn_Elevater_man_paikong" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="560,0,0,160"/>
+
+        <!--全排空：M2603.6 StoreUnit_discharge_button-->
+        <local:UCSwitch x:Name="btn_StoreUnit_discharge_button"   HorizontalAlignment="Left" VerticalAlignment="Bottom"    Margin="50,0,0,100" />
+        <!--<local:TooltipControl Visibility="Hidden" x:Name="tooltip"  MouseUp="tooltip_MouseUp" />-->
+        
+    </Grid>
+</Page>

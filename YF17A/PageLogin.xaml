@@ -1,0 +1,37 @@
+﻿<Page x:Class="YF17A.PageLogin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      ShowsNavigationUI="False"
+      d:DesignHeight="610" d:DesignWidth="82"
+	Title="Page1" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    
+    <Page.Resources>
+        <BitmapImage x:Key="bg_login"    UriSource="image/login.png"  />
+    </Page.Resources>
+
+    <Grid x:Name="panel_user_info" Background="#cfd2db">
+        <Button   x:Name="language"    VerticalAlignment="Top" HorizontalAlignment="Left"   >
+            <StackPanel >
+                <Image Source="image/LanguageSwitch.bmp" />
+                <TextBlock Text="中文" FontSize="20" HorizontalAlignment="Center"/>
+            </StackPanel>            
+        </Button>
+        
+        <Button   x:Name="login"    VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="0,200,0,0" Click="login_MouseUp" >
+            <StackPanel >
+                <Image Source="{StaticResource bg_login}" />
+                <TextBlock x:Name="tb_login" Text="登录" FontSize="20" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <TextBlock x:Name="user" Text="suer"  FontSize="20"    Margin="3,316,0,0"  VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" />
+        <TextBlock x:Name="role"  Text="role" FontSize="20" Height="27"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="3,348,0,0"  Visibility="Hidden" />
+
+        <Button  x:Name="btn_keyboard" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,60" Click="keyboardClick" Visibility="Hidden">
+            <Image Source="image/keyboard2.png" Stretch="None"/>
+        </Button>
+    </Grid>
+   
+</Page>
