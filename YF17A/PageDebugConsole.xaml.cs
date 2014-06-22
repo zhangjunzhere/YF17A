@@ -151,7 +151,7 @@ namespace YF17A
                 status = "输出";
             }
 
-            String title = String.Format("YF17 控制柜{0}状态", status);
+            String title = String.Format("控制柜{0}状态", status);
             this.tb_console_input_status.Text = title;
             this.tb_page_indictor.Text = (mPageIndex + 1) + "/" + mStatusInfosAllPage.Length;
         }
