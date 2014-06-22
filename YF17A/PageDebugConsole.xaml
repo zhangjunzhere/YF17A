@@ -19,12 +19,14 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Canvas >      
-        <TextBlock Name="tb_console_input_status" Canvas.Left="285" Canvas.Top="0" FontSize="32" Foreground="#FF1A0F0F" Text="YF17 控制柜状态" />
-        <TextBlock Name="tb_page_indictor" Canvas.Left="605" Canvas.Top="0" FontSize="32" Foreground="#FFBA4141"  Text="1/4" />
-        <Button Canvas.Left="188" Canvas.Top="5" Content="上一页" FontSize="22" Name="btn_part1" Click="btn_part1_Click" />
-        <Button Canvas.Left="669" Canvas.Top="5" Content="下一页" FontSize="22" Name="btn_part2" Click="btn_part2_Click" />
-
+    <StackPanel >      
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button  Content="上一页" FontSize="22" Name="btn_part1" Click="btn_part1_Click" />
+            <TextBlock Margin="100,0,0,0" Name="tb_console_input_status"  FontSize="32" Foreground="#FF1A0F0F" Text="控制柜状态" />
+            <TextBlock Margin="0,0,100,0" Name="tb_page_indictor"  FontSize="32" Foreground="#FFBA4141"  Text="1/4" />            
+            <Button Content="下一页" FontSize="22" Name="btn_part2" Click="btn_part2_Click" />
+        </StackPanel>
+       
         <Border x:Name="status_layout_part1" BorderBrush="Silver" BorderThickness="5" Canvas.Left="0" Canvas.Top="49" Height="538" Width="920" CornerRadius="10" >
             <ListBox x:Name="io_VariableList" ItemTemplate="{StaticResource debug_status}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                 <ListBox.ItemsPanel>
@@ -34,5 +36,5 @@
                 </ListBox.ItemsPanel>
             </ListBox>
         </Border>
-    </Canvas>
+    </StackPanel>
 </Page>
