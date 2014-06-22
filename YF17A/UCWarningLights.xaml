@@ -105,8 +105,8 @@
             <!--<Image   Name="help_StoreUnit_e_stop_button" ToolTip="下降口紧急停止按钮" Source="/YF17A;component/image/help.png"  Margin="153,249,0,0" />-->
 
             <!-- Emergency_stop	Bool	控制柜紧急停止回路断开	K01	只读	指示灯/报警条显示	I0.0-->
-            <Image  Name="iv_Emergency_stop" Source="/YF17A;component/image/light_red.png"  Margin="891,190,0,0" />
-            <Image  Name="help_Emergency_stop" ToolTip="控制柜紧急停止回路断开" Source="/YF17A;component/image/help.png"   Margin="904,171,0,0" />
+            <Image  Name="iv_Emergency_stop" Source="/YF17A;component/image/light_red.png"  Margin="877,388,0,0" />
+            <Image  Name="help_Emergency_stop" ToolTip="控制柜紧急停止回路断开" Source="/YF17A;component/image/help.png"   Margin="890,369,0,0" />
             <!--Elevater_e_stop	Bool	提升机紧急停止按钮	SB105	只读	指示灯/报警条显示	I1.7-->
         <Image  Name="iv_DropTransLimitLevel" Source="/YF17A;component/image/light_red.png"  Margin="857,235,0,0" />
         <Image  Name="help_DropTransLimitLevel" ToolTip="下降口输送极限料位"  Source="/YF17A;component/image/help.png"   Margin="866,217,0,0" />

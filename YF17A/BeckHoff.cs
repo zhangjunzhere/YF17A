@@ -26,10 +26,10 @@ namespace YF17A
         public Dictionary<String, Type> plcVarTypeMap = new Dictionary<string, Type>(); //varname, type;       
         public Dictionary<String, Object> plcVarUserdataMap = new Dictionary<String, Object>(); //varname,value;
         public Dictionary<String, String> plcVarDescriptionMap = new Dictionary<String, String>(); //varname,description;
-
-
+        
         private const String INT_TOKON = "I";
         private const String BOOL_TOKON = "B";
+        private HashSet<String> mNagtiveVariables = new HashSet<String>();
 
         public class ThresHold
         {
@@ -75,6 +75,15 @@ namespace YF17A
             mvPlcVarSets.Add(".Downport_Lowest_limit");
             mvPlcVarSets.Add(".Downport_sensor_output");
             mvPlcVarSets.Add(".Corner_entrance_sensor_output");
+
+            //init nagtive plc var
+            
+            mNagtiveVariables.Add(".Store_cig_speed");
+            mNagtiveVariables.Add(".Slope_cig_speed");
+            mNagtiveVariables.Add(".Store_speed_rpm");
+            mNagtiveVariables.Add(".Slope_speed_rpm");
+            mNagtiveVariables.Add(".Store_manual_speed");
+            mNagtiveVariables.Add(".Corner_pid_output");
         }
 
       
@@ -129,6 +138,13 @@ namespace YF17A
             Console.WriteLine(plcVarName + "   " + e.Value.ToString());
             if (t.Equals(typeof(int)))
             {
+                if (mNagtiveVariables.Contains(plcVarName))
+                {
+                    //convert unsigned integer into integer
+                    int lValue = Convert.ToInt32(value);
+                    value = lValue - ((lValue <= 32767) ? 0 : 65536);
+                }             
+
                 ThresHold limit;
                 plcVarThreadHoldMap.TryGetValue(plcVarName, out limit);
                 if (limit != null)
@@ -141,14 +157,7 @@ namespace YF17A
                         fValue = (int)(fValue + 0.99);
                     }                    
                     value = fValue;
-                }
-
-                if (plcVarName.Equals(".Store_cig_speed") || plcVarName.Equals(".Slope_cig_speed"))
-                {
-                    //convert unsigned integer into integer
-                    int lValue = (int)value;
-                    value = lValue - ((lValue <= 32767) ? 0 : 65536); 
-                }             
+                }               
             }
 
             if (plcVarUserdataMap.ContainsKey(plcVarName))
@@ -269,7 +278,7 @@ namespace YF17A
                         return;
                     } 
                 }
-                writeAny(plcVarName, (short)(fValue));
+                writeAny(plcVarName, Convert.ToInt16(fValue));
             }
             catch (Exception ex)
             {
@@ -349,7 +358,7 @@ namespace YF17A
           //  plcVarThreadHoldMap.Add(".Maker_stop_position", new ThresHold() { max = 9800, min = 9000 }); //Maker_stop_position		9800.0 	9000.0 	            
 
             plcVarThreadHoldMap.Add(".Corner_pid_pv", new ThresHold() { max = 10000, min = 0, ratio = 100 }); //弯道高度反馈（DB8.DBW2）Corner_pid_pv
-            plcVarThreadHoldMap.Add(".Corner_pid_output", new ThresHold() { max = 10000, min = 0, ratio = 100 }); //弯道控制补偿输出（DB8.DBW10）Corner_pid_output
+            plcVarThreadHoldMap.Add(".Corner_pid_output", new ThresHold() { max = 10000, min = -10000, ratio = 100 }); //弯道控制补偿输出（DB8.DBW10）Corner_pid_output
             plcVarThreadHoldMap.Add(".DownPort_hight", new ThresHold() { max = 10000, min = 0, ratio = 100 });//下降口反馈高度（DB8.DBW26）DownPort_hight
             plcVarThreadHoldMap.Add(".Maker_stop_position", new ThresHold() { max = 10000, min = 0, ratio = 100 });//卷烟机停机位置（DB8.DBW72）Maker_stop_position
 
