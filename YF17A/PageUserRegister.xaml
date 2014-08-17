@@ -16,7 +16,7 @@
                     <TextBlock x:Name="tb_title" Text="新用户注册"  Margin="10" FontSize="32" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center"  />
                     <StackPanel Orientation="Horizontal"  Margin="10">
                         <TextBlock  Text="账户  ：" FontSize="20"  />
-                        <TextBox x:Name="tb_account" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" FontSize="20" Margin="40,0,0,0"/>
+                        <TextBox   local:TouchScreenKeyboard.TouchScreenKeyboard="true" x:Name="tb_account" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" FontSize="20" Margin="40,0,0,0"/>
                     </StackPanel>
 
                     <StackPanel x:Name="panel_role" Orientation="Horizontal"  Margin="10">
@@ -26,11 +26,11 @@
 
                     <StackPanel Orientation="Horizontal" Margin="10" >
                         <TextBlock Text="密码  ：" FontSize="20" />
-                        <PasswordBox  x:Name="pb_password0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,0,0,0" MinWidth="300" FontSize="20"/>
+                        <PasswordBox   local:TouchScreenKeyboard.TouchScreenKeyboard="true"  x:Name="pb_password0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,0,0,0" MinWidth="300" FontSize="20"/>
                     </StackPanel>
                     <StackPanel x:Name="panel_password_verify" Orientation="Horizontal"  Margin="10" >
                         <TextBlock Text="确认密码  ：" FontSize="20" />
-                        <PasswordBox x:Name="pb_password1" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" FontSize="20" />
+                        <PasswordBox   local:TouchScreenKeyboard.TouchScreenKeyboard="true" x:Name="pb_password1" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" FontSize="20" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
                         <Button x:Name="btn_action_verify" Content=" 确定 " FontSize="20" Margin="20" Click="btn_action_verify_click"/>                       

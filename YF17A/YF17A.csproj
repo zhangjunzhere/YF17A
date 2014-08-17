@@ -131,9 +131,6 @@
     <Compile Include="PageStatus.xaml.cs">
       <DependentUpon>PageStatus.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageTest.xaml.cs">
-      <DependentUpon>PageTest.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PageWarningRecord.xaml.cs">
       <DependentUpon>PageWarningRecord.xaml</DependentUpon>
     </Compile>
@@ -148,9 +145,6 @@
     </Compile>
     <Compile Include="PageDebugMain.xaml.cs">
       <DependentUpon>PageDebugMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageUser.xaml.cs">
-      <DependentUpon>PageUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageWarnningHeader.xaml.cs">
       <DependentUpon>PageWarnningHeader.xaml</DependentUpon>
@@ -184,6 +178,7 @@
       <DependentUpon>ToolbarMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolTipHelper.cs" />
+    <Compile Include="TouchScreenKeyboard.cs" />
     <Compile Include="UCSwitch.xaml.cs">
       <DependentUpon>UCSwitch.xaml</DependentUpon>
     </Compile>
@@ -229,10 +224,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageTest.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PageWarningRecord.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -252,10 +243,6 @@
     <Page Include="PageDebugMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PageUser.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="PageWarnningHeader.xaml">
       <SubType>Designer</SubType>

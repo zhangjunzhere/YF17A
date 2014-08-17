@@ -62,13 +62,16 @@ namespace YF17A
 
             bundle.TryGetValue( PageDataExchange.KEY_SENDER_NAME, out senderName);          
             bundle.TryGetValue( PageDataExchange.KEY_SENDER_VALUE, out senderValue);
-            
-             WarnningDataSource.ErrorInfo info = (WarnningDataSource.ErrorInfo)senderValue;
-             this.tb_code.Text = info.code;
-             this.tb_solution.Text = info.solution;
 
-             PageDataExchange context = PageDataExchange.getInstance();
-             context.NotifyObserverChanged(PageStatus.TAG, PageStatus.CODE, info.code);
+            if (WarnningDataSource.TAG.Equals(senderName))
+            {
+                WarnningDataSource.ErrorInfo info = (WarnningDataSource.ErrorInfo)senderValue;
+                this.tb_code.Text = info.code;
+                this.tb_solution.Text = info.solution;
+
+                PageDataExchange context = PageDataExchange.getInstance();
+                context.NotifyObserverChanged(PageStatus.TAG, PageStatus.CODE, info.code);
+            }
         }
         #endregion
 
