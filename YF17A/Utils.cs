@@ -146,6 +146,10 @@ namespace YF17A
             {
                 userlevel = User.USER_PREVILIDGE_SUPERADMIN;
             }
+            else if (control.Name.Equals("btn_Store_set_zero"))
+            {
+                userlevel = User.USER_PREVILIDGE_OPERATOR;
+            }
 
             if (User.GetInstance().GetCurrentUserInfo().UserLevel >= userlevel)
             {

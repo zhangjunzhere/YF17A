@@ -30,6 +30,7 @@ namespace YF17A
         private const String INT_TOKON = "I";
         private const String BOOL_TOKON = "B";
         private HashSet<String> mNagtiveVariables = new HashSet<String>();
+        private HashSet<String> mNoUserVariables = new HashSet<String>();
 
         public class ThresHold
         {
@@ -76,14 +77,20 @@ namespace YF17A
             mvPlcVarSets.Add(".Downport_sensor_output");
             mvPlcVarSets.Add(".Corner_entrance_sensor_output");
 
-            //init nagtive plc var
-            
+            //init nagtive plc var            
             mNagtiveVariables.Add(".Store_cig_speed");
             mNagtiveVariables.Add(".Slope_cig_speed");
             mNagtiveVariables.Add(".Store_speed_rpm");
             mNagtiveVariables.Add(".Slope_speed_rpm");
             mNagtiveVariables.Add(".Store_manual_speed");
             mNagtiveVariables.Add(".Corner_pid_output");
+            mNagtiveVariables.Add(".Downport_comp_output");      
+      
+            //operation no user needed
+            mNoUserVariables.Add(".StoreUnit_discharge_button");
+            mNoUserVariables.Add(".Elevater_man_paikong");
+            mNoUserVariables.Add(".Store_manual_speed");
+            mNoUserVariables.Add(".Corner_manual_speed");
         }
 
       
@@ -213,7 +220,7 @@ namespace YF17A
 
         public void writeAny(String plcVarName, Object value)
         {
-            if (!User.GetInstance().GetCurrentUserInfo().IsLogin)
+            if (!User.GetInstance().GetCurrentUserInfo().IsLogin && !mNoUserVariables.Contains(plcVarName))
             {
                 MessageBox.Show("您需要登录才能修改！");
                 Dictionary<String, Object> bundle = new Dictionary<string, object>();
@@ -272,7 +279,7 @@ namespace YF17A
                 if (limit != null  )
                 {
                     fValue = fValue * limit.ratio;
-                    if (fValue < limit.min || fValue > limit.max)
+                    if (fValue < limit.min || fValue >(limit.max + 0.01))
                     {
                         MessageBox.Show("参数超出范围!!!");
                         return;

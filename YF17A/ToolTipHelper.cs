@@ -269,7 +269,7 @@ namespace YF17A
             mStatusMap.Add(".alarm_downport_entrance_jam", new ElementInfo() { Light = mRedLight, Flash = true }); //alarm_downport_entrance_jam	Bool	下降口入口堵塞报警指示		只读	指示灯/报警条显示	M50.2
             mStatusMap.Add(".StoreUnit_e_stop_button", new ElementInfo() { Light = mRedLight, Flash = false });  //StoreUnit_e_stop_button	Bool	存储器紧急停止按钮	SB205	只读	指示灯/报警条显示	I3.5
 
-            mStatusMap.Add(".Slope_empty", new ElementInfo() { Light = mYellowLight, Flash = false });//Slope_empty	Bool	斜向通道空	B-PRX202	只读	指示灯	I4.1
+            mStatusMap.Add(".Slope_empty", new ElementInfo() { Light = mYellowLight, Flash = true });//Slope_empty	Bool	斜向通道空	B-PRX202	只读	指示灯	I4.1
             mStatusMap.Add(".Store_entrance_cig_exist", new ElementInfo() { Light = mYellowLight, Flash = true }); //Store_entrance_cig_exist	Bool	存储器入口有烟传感器	B-PSW301	只读	指示灯	I5.3
             mStatusMap.Add(".alarm_store_entrance_jam", new ElementInfo() { Light = mRedLight, Flash = true });  //alarm_store_entrance_jam	Bool	存储器入口堵塞报警指示		只读	指示灯/报警条显示	M50.5
             mStatusMap.Add(".alarm_store_overload", new ElementInfo() { Light = mRedLight, Flash = true }); //alarm_store_overload	Bool	存储器过载报警指示		只读	指示灯/报警条显示	M50.4
@@ -280,7 +280,7 @@ namespace YF17A
             mStatusMap.Add(".Maker_enable_relay_Q", new ElementInfo() { Light = mRedLight, Flash = false, Switch=true }); //<!--Maker_enable_relay_Q	Bool	卷烟机允许(备用)	K101	只读	指示灯	Q5.4-->
             mStatusMap.Add(".Packer_enable_relay_Q", new ElementInfo() { Light = mRedLight, Flash = false, Switch = true }); // <!--Packer_enable_relay_Q	Bool	包装机允许（备用）	K107	只读	指示灯	Q8.2-->
 
-            mStatusMap.Add(".Store_empty", new ElementInfo() { Light = mYellowLight, Flash = false });//Slope_empty	Bool	斜向通道空	B-PRX202	只读	指示灯	I4.1
+            mStatusMap.Add(".Store_empty", new ElementInfo() { Light = mYellowLight, Flash = true });//Slope_empty	Bool	斜向通道空	B-PRX202	只读	指示灯	I4.1
         
 
             foreach (KeyValuePair<String, ElementInfo>  entry in mStatusMap)
