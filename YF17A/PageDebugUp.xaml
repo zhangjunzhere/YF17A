@@ -80,8 +80,8 @@
                 <Image Name="iv_sample_servo_enable" Grid.Row="4"  Grid.Column="2" />
                 <!--Corner_servo_enable	Bool	弯道驱动器使能		只读	指示灯	M1602.5-->
                 <Image  Name="iv_Corner_servo_enable"  Grid.Row="4"  Grid.Column="3" />
-                <!--Slope_servo_enable	Bool	斜向驱动器使能		只读	指示灯	M1702.5-->
-                <Image  Name="iv_Slope_servo_enable"  Grid.Row="4"  Grid.Column="4" />
+                <!--Lift_servo_enable	Bool	提升驱动器使能		只读	指示灯	M1902.5-->
+                <Image  Name="iv_Lift_servo_enable"  Grid.Row="4"  Grid.Column="4" />
                 <!--Transfer_servo_enable	Bool	传送驱动器使能		只读	指示灯	M2002.5-->
                 <Image  Name="iv_Transfer_servo_enable"  Grid.Row="4"  Grid.Column="1" />
                 <!--Sample_speed_rpm	Int	取样电机转速		只读	数值显示	MW1536-->

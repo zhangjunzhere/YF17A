@@ -156,7 +156,7 @@ namespace YF17A
 
             mStatusMap.Add(".sample_servo_enable", this.iv_sample_servo_enable); // sample_servo_enable	Bool	取样驱动器使能		只读	指示灯	M1502.5
             mStatusMap.Add(".Corner_servo_enable", this.iv_Corner_servo_enable); //Corner_servo_enable	Bool	弯道驱动器使能		只读	指示灯	M1602.5
-            mStatusMap.Add(".Slope_servo_enable", this.iv_Slope_servo_enable); //Slope_servo_enable	Bool	斜向驱动器使能		只读	指示灯	M1702.5
+            mStatusMap.Add(".Lift_servo_enable", this.iv_Lift_servo_enable); //Slope_servo_enable	Bool	斜向驱动器使能		只读	指示灯	M1702.5
             mStatusMap.Add(".Transfer_servo_enable", this.iv_Transfer_servo_enable); //Transfer_servo_enable	Bool	传送驱动器使能		只读	指示灯	M2002.5
 
             mStatusMap.Add(".Sample_speed_rpm", this.tb_Sample_speed_rpm); //Sample_speed_rpm	Int	取样电机转速		只读	数值显示	MW1536
