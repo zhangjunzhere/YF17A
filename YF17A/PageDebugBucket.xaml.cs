@@ -52,6 +52,7 @@ namespace YF17A
                 UpdateView(item, value);
             }
 
+            Utils.ShowPrevilageControl(this.btn_Store_set_zero);
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
@@ -98,7 +99,11 @@ namespace YF17A
                 {
                     UpdateView(plcVarName, plcValue);
                 }
-            }           
+            }
+            else if (User.TAG.Equals(senderName))
+            {
+                Utils.ShowPrevilageControl(this.btn_Store_set_zero);               
+            }             
         }
         #endregion
 
